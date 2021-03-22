@@ -5,13 +5,13 @@
 2. Node JS LTS [NodeJS](https://nodejs.org/en/)
 
 
-###Instalar as dependências do Java Spring Boot
+### Instalar as dependências do Java Spring Boot
 ```
 cd motivastudy/Server
 mvn install
 ```
 
-###Instalar as dependências do Angular
+### Instalar as dependências do Angular
 ```
 cd motivastudy/Client
 npm install
