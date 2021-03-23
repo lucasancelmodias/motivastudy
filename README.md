@@ -14,6 +14,6 @@ mvn install
 
 ### Instalar as dependências do Angular
 ```
-cd motivastudy/Client
+cd motivastudy/Client/motivastudy-client
 npm install
 ```
