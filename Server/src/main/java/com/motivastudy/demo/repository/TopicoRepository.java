@@ -7,7 +7,7 @@ import com.motivastudy.demo.models.Topico;
 
 public interface TopicoRepository extends JpaRepository<Topico, Integer> {
     
-    Optional<Topico> findById(String id);
+    Optional<Topico> findById(Long id);
     Optional<Topico> findByNome(String nome);
     Optional<Topico> findByURL(String url);
 }
