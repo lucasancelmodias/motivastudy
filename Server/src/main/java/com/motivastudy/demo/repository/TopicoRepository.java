@@ -2,11 +2,12 @@ package com.motivastudy.demo.repository;
 
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.motivastudy.demo.models.Usuario;
 
-public interface TopicoRepository extends JpaRepository<User, Integer> {
+import com.motivastudy.demo.models.Topico;
+
+public interface TopicoRepository extends JpaRepository<Topico, Integer> {
     
-    Optional<Usuario> findById(String id);
-    Optional<Usuario> findByNome(String nome);
-    Optional<Usuario> findByURL(String url);
+    Optional<Topico> findById(String id);
+    Optional<Topico> findByNome(String nome);
+    Optional<Topico> findByURL(String url);
 }
