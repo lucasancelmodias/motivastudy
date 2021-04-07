@@ -14,6 +14,5 @@ public interface QuestaoRepository extends JpaRepository<Questao, Long> {
     List<Questao> findByTopico(Topico topico); 
     Optional<Questao> findById(Long id);
     Optional<Questao> findByIdAndAlternativaCorreta(Long id, String alternativaCorreta);
-    List<Questao> findByTopicoFirst5(Topico topico);
-
+    
 }
