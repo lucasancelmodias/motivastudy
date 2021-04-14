@@ -31,5 +31,12 @@ public class QuestaoUsuarioService {
         return questaoUsuarioRepository.findByQuestao(questao);
     }
 
-    
+    public void save(QuestaoUsuario questaoUsuario){
+        questaoUsuarioRepository.save(questaoUsuario);
+    }
+
+    public void delete(QuestaoUsuario questaoUsuario){
+        questaoUsuarioRepository.delete(questaoUsuario);
+    }
+
 }

@@ -28,4 +28,12 @@ public class TopicoService {
     public Optional<Topico> findByurlPlaylist(String url){
         return topicoRepository.findByurlPlaylist(url);
     }
+
+    public void save(Topico topico){
+        topicoRepository.save(topico);
+    }
+
+    public void delete(Topico topico){
+        topicoRepository.delete(topico);
+    }
 }

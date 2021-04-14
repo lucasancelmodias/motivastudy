@@ -28,4 +28,12 @@ public class DisciplinaService {
     public Optional<Disciplina> findByNome(String nome){
         return disciplinaRepository.findByNome(nome);
     }
+
+    public void save(Disciplina disciplina){
+        disciplinaRepository.save(disciplina);
+    }
+
+    public void delete(Disciplina disciplina){
+        disciplinaRepository.delete(disciplina);
+    }
 }

@@ -36,4 +36,12 @@ public class QuestaoService {
         return questaoRepo.findByIdAndAlternativaCorreta(id, alternativaCorreta);
     }
 
+    public void save(Questao questao){
+        questaoRepo.save(questao);
+    }
+
+    public void delete(Questao questao){
+        questaoRepo.delete(questao);
+    }
+
 }

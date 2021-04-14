@@ -33,4 +33,12 @@ public class UsuarioService {
     public List<Usuario> findAll(){
         return usuarioRepo.findAll();
     }
+
+    public void save(Usuario usuario){
+        usuarioRepo.save(usuario);
+    }
+
+    public void delete(Usuario usuario){
+        usuarioRepo.delete(usuario);
+    }
 }

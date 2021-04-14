@@ -25,4 +25,12 @@ public class PerfilService {
     public List<Perfil> findAll(){
         return perfilRepo.findAll();
     }
+
+    public void save(Perfil perfil){
+        perfilRepo.save(perfil);
+    }
+
+    public void delete(Perfil perfil){
+        perfilRepo.delete(perfil);
+    }
 }
