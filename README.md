@@ -19,7 +19,7 @@ cd motivastudy/Client/motivastudy-client
 npm install -g @angular/cli
 npm install
 ```
-### Instalar as do Bootstrap
+### Instalar as dependências do Bootstrap
 ```
 cd npm install bootstrap jquery
 ```
