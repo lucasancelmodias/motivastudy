@@ -20,4 +20,6 @@ npm install -g @angular/cli
 npm install
 ```
 ### Instalar as do Bootstrap
+```
 cd npm install bootstrap jquery
+```
