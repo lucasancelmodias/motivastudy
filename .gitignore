@@ -104,3 +104,4 @@ dist
 .tern-port
 .vscode/launch.json
 Server/src/main/resources/application.properties
+Server/src/main/resources/application.properties
