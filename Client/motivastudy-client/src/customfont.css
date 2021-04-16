@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'NexaBold';
+  src: url('../src/assets/fonts/NexaBold.woff2') format('woff2'),
+    url('../src/assets/fonts/NexaBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NexaLight';
+  src: url('../src/assets/fonts/NexaLight.woff2') format('woff2'),
+    url('../src/assets/fonts/NexaLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('../src/assets/fonts/Montserrat-Bold.woff2') format('woff2'),
+    url('../src/assets/fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MontserratLight';
+  src: url('../src/assets/fonts/Montserrat-Light.woff2') format('woff2'),
+    url('../src/assets/fonts/Montserrat-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
