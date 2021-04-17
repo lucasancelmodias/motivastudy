@@ -1,0 +1,28 @@
+<form>
+  <div class="form-group">
+    <!-- Título -->
+    <a routerLink="/"> <button type="button" class="btn btn-outline-primary btn-back" data-mdb-ripple-color="dark">
+        &#8249; </button> </a>
+    <h2> Faça seu <span id="text">login</span></h2>
+    <!-- Campo do email-->
+    <input type="text" class="form-control" id="InputNome" placeholder="Seu e-mail cadastrado">
+    <!-- Campo da senha-->
+    <input type="password" class="form-control" id="InputPassword" placeholder="Sua senha">
+  </div>
+  <!-- Esqueceu a senha link-->
+  <small class="form-text text-muted d-flex justify-content-center">Esqueci minha senha</small>
+  <!-- Check para lembrar o user-->
+  <div class="d-flex justify-content-center">
+    <span class="checkbox-el">
+      <input class="input-checkbox" id="createaccount" type="checkbox" name="createaccount" value="1">
+      <div class="checkbox-circle"></div>
+    </span>
+    <label class="form-check-label " for="checkLembrarUsuario"> Lembrar usuário</label>
+  </div>
+  <!-- Botão login-->
+  <div class="d-flex justify-content-center"><button type="submitLogin" class="btn btn-primary btn-grad">Login</button>
+  </div>
+  <!-- Link cadastro-->
+  <h3 class="form-text text-muted d-flex justify-content-center">Não tem conta? &nbsp;<a routerLink="/cadastro">
+      Inscreva-se</a></h3>
+</form>

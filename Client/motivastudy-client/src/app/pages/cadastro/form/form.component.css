@@ -1,10 +1,19 @@
+.btn-back{
+border-radius:100px;
+padding: 2px 12px;
+border-color: #330867;
+}
+
+.btn-back:hover{
+  background-color: #330867;
+}
+
 form{
     background-color: #fcfcfc;
     margin: 3%;
     padding: 8%;
     border-radius:5px;
-    box-shadow: 10px 10px #754BEE;
-    
+    box-shadow: 10px 10px 20px -5px #574fb6;
 }
 
 
@@ -15,7 +24,7 @@ form{
 }
 
 
-.btn {
+.btn-grad {
     border-radius:50px;
     font-size: 15px;
     border: 0%;
@@ -32,12 +41,13 @@ form{
       
 }
 
-.btn:hover {
+.btn-grad:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
+
 
 
 #InputNome {
@@ -55,9 +65,18 @@ h2 {
 
 
 #text {
-  background: linear-gradient(to right, #330867 0%, #30CFD0 100%);
+  background: linear-gradient(to right, #330867 0%, #30CFD0 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'MontserratBold';
   font-size: 35px;
+}
+
+h3 {
+  font-size: large;
+  padding-top: 5%;
+  background: linear-gradient(to right, #330867 5%, #30CFD0 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: NexaBold;
 }

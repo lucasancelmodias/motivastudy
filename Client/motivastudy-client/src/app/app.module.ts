@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './pages/cadastro/form/form.component';
+import { FormLComponent } from './pages/login/form-l/form-l.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormComponent } from './pages/cadastro/form/form.component';
     HomeComponent,
     CadastroComponent,
     LoginComponent,
-    FormComponent
+    FormComponent,
+    FormLComponent
   ],
   imports: [
     BrowserModule,
