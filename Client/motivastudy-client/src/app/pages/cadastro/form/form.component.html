@@ -1,23 +1,27 @@
 <form>
   <div class="form-group">
+    <!-- Voltar para a home -->
     <span>
       <a routerLink="/"> <button type="button" class="btn btn-outline-primary btn-back" data-mdb-ripple-color="dark">
           &#8249; </button> </a>
+      <!-- Título -->
       <h2> Crie sua <span id="text">conta</span>
       </h2>
     </span>
+    <!-- Campos de nome e Email -->
     <input type="text" class="form-control" id="InputNome" placeholder="Seu nome">
     <input type="email" class="form-control" id="InputEmail" placeholder="Seu e-mail">
     <small class="form-text text-muted">Nós não vamos compartilhar o seu e-mail com mais ninguém.</small>
-
   </div>
   <div class="form-group">
+    <!-- Campos de senha -->
     <input type="password" class="form-control" id="InputPassword" placeholder="Sua senha">
     <input type="password" class="form-control" id="InputPasswordConfirmation" placeholder="Confirme sua senha">
   </div>
+  <!-- btn cadastro -->
   <div class="d-flex justify-content-center"><button type="submit" class="btn btn-primary btn-grad">Cadastrar</button>
   </div>
-
+  <!-- Link para fazer login -->
   <h3 class="form-text text-muted d-flex justify-content-center">Já tem conta? &nbsp;<a routerLink="/login">
       Faça o login</a></h3>
 </form>

@@ -1,69 +1,68 @@
-.btn-back{
-border-radius:100px;
-padding: 2px 12px;
-border-color: #330867;
+/** voltar */
+.btn-back {
+  border-radius: 100px;
+  padding: 2px 12px;
+  border-color: #330867;
 }
 
-.btn-back:hover{
+.btn-back:hover {
   background-color: #330867;
 }
 
-form{
-    background-color: #fcfcfc;
-    margin: 3%;
-    padding: 8%;
-    border-radius:5px;
-    box-shadow: 10px 10px 20px -5px #574fb6;
+/** design do formulario */
+form {
+  background-color: #fcfcfc;
+  margin: 3%;
+  padding: 8%;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px -5px #574fb6;
 }
 
-
-.form-control{
-    margin-bottom: 2%;
-    border-radius:50px;
-    border-color: #f7f2f2;
+/** posição dos campos */
+.form-control {
+  margin-bottom: 2%;
+  border-radius: 50px;
+  border-color: #f7f2f2;
 }
 
-
+/** botão do gradiente */
 .btn-grad {
-    border-radius:50px;
-    font-size: 15px;
-    border: 0%;
-    border-style:none;
-    background-image: linear-gradient(to right, #330867 1%, #30CFD0 50%);
-    margin-top: 20px;
-    padding: 10px 75px;
-    text-align: center;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    box-shadow: 0 0 20px #eee;
-    display: block;
-      
+  border-radius: 50px;
+  font-size: 15px;
+  border: 0%;
+  border-style: none;
+  background-image: linear-gradient(to right, #330867 1%, #30CFD0 50%);
+  margin-top: 20px;
+  padding: 10px 75px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  display: block;
 }
 
 .btn-grad:hover {
   background-position: right center;
-  /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-
-
+/** posição do campo de nome*/
 #InputNome {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
+/** style do titulo*/
 h2 {
   text-align: center;
-    padding-bottom: 6%;
+  padding-bottom: 6%;
   color: #330867;
   font-family: 'MontserratBold';
   font-size: 35px;
-
 }
 
-
+/** texto em gradiente*/
 #text {
   background: linear-gradient(to right, #330867 0%, #30CFD0 85%);
   -webkit-background-clip: text;
@@ -72,6 +71,7 @@ h2 {
   font-size: 35px;
 }
 
+/** texto do link em gradiente*/
 h3 {
   font-size: large;
   padding-top: 5%;

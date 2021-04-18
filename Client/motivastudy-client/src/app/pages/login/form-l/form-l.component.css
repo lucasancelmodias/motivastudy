@@ -32,7 +32,8 @@ form {
   border: 0%;
   border-style: none;
   background-image: linear-gradient(to right, #330867 0%, #db40a5 45%);
-  margin-top: 20px;  padding: 10px 75px;
+  margin-top: 20px;
+  padding: 10px 75px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
@@ -76,7 +77,7 @@ h2 {
 
 /** pro check ficar mais pra baixo */
 .form-check {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 /** pro check ficar redondo */
@@ -123,14 +124,14 @@ h2 {
 }
 
 small {
-    padding-bottom: 5%;
+  padding-bottom: 5%;
 }
 
-h3{
-    font-size: large;
-    padding-top: 5%;
-    background: linear-gradient(to right, #330867 5%, #db40a5 85%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: NexaBold;
+h3 {
+  font-size: large;
+  padding-top: 5%;
+  background: linear-gradient(to right, #330867 5%, #db40a5 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: NexaBold;
 }
