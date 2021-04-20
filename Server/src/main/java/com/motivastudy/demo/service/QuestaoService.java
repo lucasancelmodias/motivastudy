@@ -28,16 +28,16 @@ public class QuestaoService {
         return questaoRepo.findByTopico(topico);
     }
 
-    public Optional<Questao> findById(Questao questao){
-        return questaoRepo.findById(questao.getId());
+    public Optional<Questao> findById(Long id){
+        return questaoRepo.findById(id);
     }
 
     public Optional<Questao> findByIdAndAlternativaCorreta(Long id, String alternativaCorreta){
         return questaoRepo.findByIdAndAlternativaCorreta(id, alternativaCorreta);
     }
 
-    public void save(Questao questao){
-        questaoRepo.save(questao);
+    public Questao save(Questao questao){
+        return questaoRepo.save(questao);
     }
 
     public void delete(Questao questao){
