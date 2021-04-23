@@ -20,7 +20,7 @@ form {
 
 /** posição dos campos */
 .form-control {
-  margin-bottom: 2%;
+  margin: 10px;
   border-radius: 50px;
   border-color: #f7f2f2;
 }
@@ -79,4 +79,8 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: NexaBold;
+}
+
+small {
+  margin-left: 12px;
 }

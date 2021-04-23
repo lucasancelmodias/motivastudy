@@ -6,11 +6,13 @@ import { from } from 'rxjs';
 import { HomeComponent } from "./pages/home/home.component";
 import { CadastroComponent } from "./pages/cadastro/cadastro.component";
 import { LoginComponent } from "./pages/login/login.component";
+import {CadastroQuestoesComponent} from "./pages/cadastro-questoes/cadastro-questoes.component"
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: "cadastro", component: CadastroComponent },
-  { path: "login", component: LoginComponent},
+  { path: "login", component: LoginComponent },
+  { path: "cadastroQuestoes", component: CadastroQuestoesComponent}
 ];
 
 @NgModule({

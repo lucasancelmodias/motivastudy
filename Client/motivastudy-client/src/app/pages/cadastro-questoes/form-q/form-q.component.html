@@ -1,0 +1,81 @@
+<form>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6 div-left">
+      <div class="form-group">
+        <!-- SELECT  MATÉRIA  -->
+        <h3 class="text-white">Matéria</h3> <select class="form-control inputQ" id="selectMateria">
+          <option>Matemática 1 </option>
+          <option>Matemática 2 </option>
+          <option>Física</option>
+          <option>Química</option>
+          <option>Biologia</option>
+          <option>História</option>
+          <option>Geografia</option>
+          <option>Literatura</option>
+          <option>Gramática</option>
+          <option>Filosofia</option>
+          <option>Sociologia</option>
+        </select>
+        <!-- SELECT  Tópico  -->
+        <h3 class="text-white">Tópico</h3>
+        <select class="form-control inputQ" id="TopicoMatematica1">
+          <option>Matemática Básica</option>
+          <option>Equação de 1° Grau e 2° Grau</option>
+          <option>Porcentagem e Juros</option>
+          <option>Matemática - PA </option>
+          <option>Matemática - PG</option>
+          <option>Inequação de 1° e 2° Grau</option>
+          <option>Conjuntos Numéricos</option>
+          <option>Análise Combinatória</option>
+          <option>Probabilidade e Estatística</option>
+          <option>Análise de gráficos e tabelas</option>
+          <option>Matrizes e Sistemas Lineares</option>
+          <option>Logaritimo</option>
+        </select>
+        <!-- CAMPO ENUNCIADO  -->
+        <h3 class="text-white"> Enunciado</h3>
+        <textarea type="text" class="form-control inputQ" id="enunciado" rows="3" placeholder="Enunciado da Questão."
+          required></textarea>
+        <!-- CAMPO TEXTO DE APOIO  -->
+        <h3 class="text-white">Texto de apoio</h3>
+        <textarea type="text" class="form-control inputQ" id="textoApoio" rows="3" placeholder="Texto de apoio."
+          required></textarea>
+        <h3 class="text-white">Peso</h3>
+        <select class="form-control" id="peso" required>
+          <option>1 </option>
+          <option>3</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6 div-right">
+      <!-- ALTERNATIVAS  -->
+      <div class="form-group ">
+        <h3 class="text-color">Alternativas</h3>
+        <input type="text" class="form-control alternativas" id="valorAlternativaA" placeholder="Alternativa A"
+          required>
+        <input type="text" class="form-control alternativas" id="valorAlternativaB" placeholder="Alternativa B"
+          required>
+        <input type="text" class="form-control alternativas" id="valorAlternativaC" placeholder="Alternativa C"
+          required>
+        <input type="text" class="form-control alternativas" id="valorAlternativaD" placeholder="Alternativa D"
+          required>
+        <input type="text" class="form-control alternativas" id="valorAlternativaE" placeholder="Alternativa E"
+          required>
+        <!-- ALTERNATIVA CERTA  -->
+        <h3 class="text-color alternativaCerta">Alternativa correta</h3>
+        <select class="form-control alternativasForm" id="alternativaCorreta" required>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+        </select>
+        <!-- BOTÃO DE CADASTRO  -->
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-grad">Cadastrar Questão</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

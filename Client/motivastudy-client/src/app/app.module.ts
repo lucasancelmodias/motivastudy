@@ -8,6 +8,10 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './pages/cadastro/form/form.component';
 import { FormLComponent } from './pages/login/form-l/form-l.component';
+import { CadastroQuestoesComponent } from './pages/cadastro-questoes/cadastro-questoes.component';
+import { FormQComponent } from './pages/cadastro-questoes/form-q/form-q.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FormLComponent } from './pages/login/form-l/form-l.component';
     CadastroComponent,
     LoginComponent,
     FormComponent,
-    FormLComponent
+    FormLComponent,
+    CadastroQuestoesComponent,
+    FormQComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
