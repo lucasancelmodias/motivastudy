@@ -14,6 +14,7 @@ import com.motivastudy.demo.service.QuestaoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,11 +47,10 @@ public class QuestaoController {
         return new ResponseEntity<>(questao, HttpStatus.CREATED);
     }
 
-    @GetMapping("/topico/{id}")
-    public ResponseEntity<List<QuestaoResponse>> questaoTopico(@PathVariable String id){
-        Long idParam = Long.parseLong(id);
+    @GetMapping(value = "/topico/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<QuestaoResponse>> questaoTopico(@PathVariable Long id){
         List<QuestaoResponse> questao = new ArrayList<>();
-        List<Questao> lsQuestao = questaoService.findByTopico(new Topico(idParam));
+        List<Questao> lsQuestao = questaoService.findByTopico(new Topico(id));
         lsQuestao.forEach(ques -> questao.add(QuestaoResponse.buildQuestaoResponse(ques)));
 
         return new ResponseEntity<>(questao, HttpStatus.OK);

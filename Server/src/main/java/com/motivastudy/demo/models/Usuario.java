@@ -1,11 +1,14 @@
 package com.motivastudy.demo.models;
 
+import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +25,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,13 +50,13 @@ public class Usuario {
 
     private String anotacao;
 
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(
         name="usuario_perfil",
-        joinColumns = {@JoinColumn(name="Usuario_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name="Perfil_id", referencedColumnName = "id")}
+        joinColumns = {@JoinColumn(name="usuario_id", referencedColumnName = "id")},
+        inverseJoinColumns = {@JoinColumn(name="perfil_id", referencedColumnName = "id")}
     )
-    private List<Perfil> perfis;
+    private Set<Perfil> perfis = new HashSet<>();
 
 
 
