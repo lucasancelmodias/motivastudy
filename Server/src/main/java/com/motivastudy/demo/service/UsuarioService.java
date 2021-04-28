@@ -64,12 +64,12 @@ public class UsuarioService {
             message.put("message", "Usuário já cadastro com esse e-mail.");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
         }
-
+        
         if(!form.getSenha().equals(form.getSenhaconfirmacao())){
             message.put("message", "As senhas devem ser iguais");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
         }
-
+        /*
         if(form.getSenha().equals("") || form.getSenhaconfirmacao().equals("")){
             message.put("message", "A senha não pode ser vazia");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
@@ -77,7 +77,7 @@ public class UsuarioService {
         if(form.getNome().equals("") || form.getNome().length() < 2){
             message.put("message","O nome não pode ser vazio ou menor que 2 caracteres.");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
-        }
+        }*/
         Set<Perfil> perfis = new HashSet<>();
         Optional<Perfil> perfil = perfilService.findPerfilByNome(Perfil.ALUNO);
         if(perfil.isPresent()){
