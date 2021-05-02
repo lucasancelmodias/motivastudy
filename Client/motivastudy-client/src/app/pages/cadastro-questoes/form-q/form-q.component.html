@@ -3,7 +3,7 @@
     <div class="col-sm-12 col-md-12 col-lg-6 div-left">
       <div class="form-group">
         <!-- SELECT  MATÉRIA  -->
-        <h3 class="text-white">Matéria</h3> <select class="form-control inputQ" id="selectMateria">
+        <h3 class="text-white">Matéria</h3> <select class="form-control inputQ" id="selectMateria" name="materia">
           <option>Matemática 1 </option>
           <option>Matemática 2 </option>
           <option>Física</option>
@@ -18,7 +18,7 @@
         </select>
         <!-- SELECT  Tópico  -->
         <h3 class="text-white">Tópico</h3>
-        <select class="form-control inputQ" id="TopicoMatematica1">
+        <select class="form-control inputQ" id="TopicoMatematica1" name="topico">
           <option>Matemática Básica</option>
           <option>Equação de 1° Grau e 2° Grau</option>
           <option>Porcentagem e Juros</option>
@@ -35,13 +35,13 @@
         <!-- CAMPO ENUNCIADO  -->
         <h3 class="text-white"> Enunciado</h3>
         <textarea type="text" class="form-control inputQ" id="enunciado" rows="3" placeholder="Enunciado da Questão."
-          required></textarea>
+          name="enunciado" required></textarea>
         <!-- CAMPO TEXTO DE APOIO  -->
         <h3 class="text-white">Texto de apoio</h3>
         <textarea type="text" class="form-control inputQ" id="textoApoio" rows="3" placeholder="Texto de apoio."
-          required></textarea>
+          name="testoApoio" required></textarea>
         <h3 class="text-white">Peso</h3>
-        <select class="form-control" id="peso" required>
+        <select class="form-control" id="peso" name="peso" required>
           <option>1 </option>
           <option>3</option>
           <option>5</option>
@@ -53,18 +53,18 @@
       <div class="form-group ">
         <h3 class="text-color">Alternativas</h3>
         <input type="text" class="form-control alternativas" id="valorAlternativaA" placeholder="Alternativa A"
-          required>
+          name="valorAlternativaA" required>
         <input type="text" class="form-control alternativas" id="valorAlternativaB" placeholder="Alternativa B"
-          required>
+          name="valorAlternativaB" required>
         <input type="text" class="form-control alternativas" id="valorAlternativaC" placeholder="Alternativa C"
-          required>
+          name="valorAlternativaC" required>
         <input type="text" class="form-control alternativas" id="valorAlternativaD" placeholder="Alternativa D"
-          required>
+          name="valorAlternativaD" required>
         <input type="text" class="form-control alternativas" id="valorAlternativaE" placeholder="Alternativa E"
-          required>
+          name="valorAlternativaE" required>
         <!-- ALTERNATIVA CERTA  -->
         <h3 class="text-color alternativaCerta">Alternativa correta</h3>
-        <select class="form-control alternativasForm" id="alternativaCorreta" required>
+        <select class="form-control alternativasForm" id="alternativaCorreta" name="alternativaCorreta" required>
           <option>A</option>
           <option>B</option>
           <option>C</option>

@@ -12,6 +12,12 @@ import { CadastroQuestoesComponent } from './pages/cadastro-questoes/cadastro-qu
 import { FormQComponent } from './pages/cadastro-questoes/form-q/form-q.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { QuestoesComponent } from './pages/questoes/questoes.component';
+import { SidebarComponent } from './pages/questoes/sidebar/sidebar.component';
+import { QuestaoComponent } from './pages/questoes/questao/questao.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
+import { FormAlterarDadosComponent } from './pages/perfil/form-alterar-dados/form-alterar-dados.component';
+import { FormProfessorComponent } from './pages/perfil/form-professor/form-professor.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { FooterComponent } from './components/footer/footer.component';
     CadastroQuestoesComponent,
     FormQComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    QuestoesComponent,
+    SidebarComponent,
+    QuestaoComponent,
+    PerfilComponent,
+    FormAlterarDadosComponent,
+    FormProfessorComponent
   ],
   imports: [
     BrowserModule,

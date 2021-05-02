@@ -1,0 +1,34 @@
+.row{
+    margin: 1px;
+    background-color: #fcfcfc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: -10px 10px 20px -5px #574fb6;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #330867 20%, #db40a5 90%);
+    width: 236px;
+    color:#fcfcfc;
+    display: block;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 100% auto;
+    border: 0%;
+    border-style: none;
+    font-size: 20px;
+    margin-bottom: 4px;
+
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(to right, #330867 25%, #db40a5 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+}
+
+.btn-secondary:focus{
+    border: none;
+}
