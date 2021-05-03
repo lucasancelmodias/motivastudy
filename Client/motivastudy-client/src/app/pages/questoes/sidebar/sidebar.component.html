@@ -1,90 +1,212 @@
-<div class="row">
-  <div class="col-3">
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-grad dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Matemática 1
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Topico 1</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Matemática 2
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Física
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Química
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">História
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Gramática
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Sociologia
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Filosofia
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Literatura
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-      <div class="btn-group dropright">
-        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Geografia
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item d-flex justify-content-center" href="#">Sair</a>
-        </div>
-      </div>
-
-
+<div class="wrapper">
+  <input id="matematica1" type="checkbox">
+  <label for="matematica1">
+    <p>Matemática I </p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">Matemática Básica</a>
+        </li>
+        <li>
+          <a href="#">Equação de 1° Grau e 2° Grau</a>
+        </li>
+        <li>
+          <a href="#">Porcentagem e Juros</a>
+        </li>
+        <li>
+          <a href="#">Matemática - PA </a>
+        </li>
+        <li>
+          <a href="#">Matemática - PG</a>
+        </li>
+        <li>
+          <a href="#">Inequação de 1° e 2° Grau</a>
+        </li>
+        <li>
+          <a href="#">Conjuntos Numéricos</a>
+        </li>
+        <li>
+          <a href="#">Análise Combinatória</a>
+        </li>
+        <li>
+          <a href="#">Probabilidade e Estatística</a>
+        </li>
+        <li>
+          <a href="#">Análise de Gráficos e Tabelas</a>
+        </li>
+        <li>
+          <a href="#">Matrizes e Sistemas Lineares</a>
+        </li>
+        <li>
+          <a href="#">Logaritimo</a>
+        </li>
+      </ul>
     </div>
-  </div>
-
+    <span></span>
+  </label>
+  <input id="matematica2" type="checkbox">
+  <label for="matematica2">
+    <p>Matemática II</p>
+    <div class="lil_arrow"></div>
+    <div class="content " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <ul>
+        <li>
+          <a class="nav-link" id="v-pills-geometriaPlana-tab" data-toggle="pill" href="#v-pills-geometriaPlana" role="tab" aria-controls="v-pills-geometriaPlana" aria-selected="false">Geometria Plana</a>
+        </li>
+        <li>
+          <a class="nav-link" id="v-pills-geometriaEspacial-tab" data-toggle="pill" href="#v-pills-geometriaEspacial" role="tab" aria-controls="v-pills-geometriaEspacial" aria-selected="false">Geometria Espacial</a>
+        </li>
+        <li>
+          <a class="nav-link" id="v-pills-trigonometria-tab" data-toggle="pill" href="#v-pills-trigonometria" role="tab" aria-controls="v-pills-trigonometria" aria-selected="false">Trignometria</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+  <input id="historia" type="checkbox">
+  <label for="historia">
+    <p>História</p>
+    <div class="lil_arrow"></div>
+    <div class="content">
+      <ul>
+        <li>
+          <a href="#">História Geral</a>
+        </li>
+        <li>
+          <a href="#"> História do Brasil</a>
+        </li>
+      </ul>
+    </div>
+    <span></span>
+  </label>
+ 
 </div>
