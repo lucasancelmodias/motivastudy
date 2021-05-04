@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.motivastudy.demo.dto.CadastroForm;
+import com.motivastudy.demo.models.Usuario;
 import com.motivastudy.demo.models.UsuarioDetailsImpl;
 import com.motivastudy.demo.service.UsuarioService;
 
@@ -28,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 public class LoginController {
     
@@ -36,9 +37,9 @@ public class LoginController {
     UsuarioService userService;
 
     @RequestMapping("/user")
-    public ResponseEntity<UsuarioDetailsImpl> user(){
+    public ResponseEntity<Usuario> user(){
         UsuarioDetailsImpl userDet =(UsuarioDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return ResponseEntity.ok(userDet);
+        return ResponseEntity.ok(userDet.getUsuario());
     }
 
     @PostMapping("/cadastro")
@@ -46,6 +47,11 @@ public class LoginController {
         
         return userService.cadastrarUsuario(form);
 
+    }
+
+    @PostMapping("usuario/update")
+    public ResponseEntity usuarioUpdate(@RequestBody @Valid CadastroForm form){
+        return userService.usuarioUpdate(form);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

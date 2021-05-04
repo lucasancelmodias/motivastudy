@@ -69,15 +69,7 @@ public class UsuarioService {
             message.put("message", "As senhas devem ser iguais");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
         }
-        /*
-        if(form.getSenha().equals("") || form.getSenhaconfirmacao().equals("")){
-            message.put("message", "A senha não pode ser vazia");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
-        }
-        if(form.getNome().equals("") || form.getNome().length() < 2){
-            message.put("message","O nome não pode ser vazio ou menor que 2 caracteres.");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
-        }*/
+        
         Set<Perfil> perfis = new HashSet<>();
         Optional<Perfil> perfil = perfilService.findPerfilByNome(Perfil.ALUNO);
         if(perfil.isPresent()){
@@ -99,4 +91,25 @@ public class UsuarioService {
     public PasswordEncoder passwordEncrypt(){
         return new BCryptPasswordEncoder();
     }
+
+	public ResponseEntity usuarioUpdate(CadastroForm form) {
+        Map<String,String> message = new HashMap<>();
+        if(!form.getSenha().equals(form.getSenhaconfirmacao())){
+            message.put("message", "As senhas devem ser iguais");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(message);
+        }
+
+        Optional<Usuario> user = usuarioRepo.findUsuarioByEmail(form.getEmail());
+        Usuario userUpdate = new Usuario();
+        if(user.isPresent()){
+            userUpdate = user.get();
+        }
+
+        userUpdate.setNome(form.getNome());
+        userUpdate.setSenha(passwordEncrypt().encode(form.getSenha()));
+
+        usuarioRepo.save(userUpdate);
+
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepo.save(userUpdate));
+	}
 }

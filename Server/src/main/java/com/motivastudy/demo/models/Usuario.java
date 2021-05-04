@@ -20,6 +20,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -35,6 +38,7 @@ public class Usuario implements Serializable {
     private String nome;
     @NotNull
     @NotEmpty
+    @JsonIgnore
     private String senha;
     @NotNull
     @NotEmpty
@@ -56,6 +60,7 @@ public class Usuario implements Serializable {
         joinColumns = {@JoinColumn(name="usuario_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name="perfil_id", referencedColumnName = "id")}
     )
+    @JsonManagedReference
     private Set<Perfil> perfis = new HashSet<>();
 
 

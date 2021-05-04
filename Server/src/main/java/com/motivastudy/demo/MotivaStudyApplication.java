@@ -19,8 +19,10 @@ public class MotivaStudyApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-					.allowedOrigins("http://localhost:4200")
-					.allowedMethods("PUT", "DELETE", "GET", "POST");
+					.allowedOrigins("*")
+					.allowedHeaders("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
+					"Access-Control-Request-Headers")
+					.allowedMethods("PUT", "DELETE", "GET", "POST", "OPTIONS");
 			}
 		};
 	}

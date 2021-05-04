@@ -12,6 +12,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -37,5 +39,6 @@ public class Perfil implements Serializable {
     private String nome;
 
     @ManyToMany(mappedBy = "perfis")
+    @JsonBackReference
     private List<Usuario> usuarios;
 }

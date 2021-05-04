@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
+import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +10,7 @@ constructor(private http: HttpClient) { }
 
 
   cadastrarUsuario(form:any){
-    this.http.post("http://localhost:8080/cadastro", form.value)
+    this.http.post(`${environment.url}/cadastro`, form.value)
     .subscribe(
       (response:any) => {
       console.log('usuário cadastrado');

@@ -71,7 +71,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.cors().disable()
+        http.cors().and()
             .csrf()
             .disable()
             .authorizeRequests()
@@ -81,7 +81,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
             .and()
                 .formLogin()
                 .successHandler(successHandler())
-                .loginProcessingUrl("/dologin")
+                .loginProcessingUrl("/dologin").permitAll()
                 .failureHandler(failureHandler())
             .and() 
                 .exceptionHandling()
@@ -112,7 +112,6 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
                     HttpServletResponse httpServletResponse, AuthenticationException e)
                     throws IOException, ServletException {
                 Map<String,Object> respBody = new HashMap<>();
-                
                 respBody.put("mensagem","Usuário ou senha inválidos.");
                 respBody.put("erro",true);
                 String resp = new ObjectMapper().writeValueAsString(respBody);
@@ -153,8 +152,10 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
       CorsConfigurationSource corsConfigurationSource() 
       {
           CorsConfiguration configuration = new CorsConfiguration();
-          configuration.setAllowedOrigins(Arrays.asList("https://localhost:4200"));
+          configuration.setAllowedOrigins(Arrays.asList("*"));
           configuration.setAllowedMethods(Arrays.asList("*"));
+          configuration.setAllowedHeaders(Arrays.asList("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
+          "Access-Control-Request-Headers"));
           UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
           source.registerCorsConfiguration("/**", configuration);
           return source;

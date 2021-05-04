@@ -15,7 +15,9 @@ public class CadastroForm {
     @Size(min = 2, message = "O nome não pode ser vazio ou menor que 2 caracteres.")
     private String nome;
     @NotEmpty
+    @Size(min=8, message = "A senha deve conter no minimo 8 caracteres")
     private String senha;
     @NotEmpty
+    @Size(min=8, message = "A senha deve conter no minimo 8 caracteres")
     private String senhaconfirmacao;
 }
