@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.motivastudy.demo.models.UsuarioDetailsImpl;
 import com.motivastudy.demo.service.UsuarioDetailsServiceImpl;
 
 
@@ -26,6 +27,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -87,6 +89,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
                     .authenticationEntryPoint(authenticationEntryPoint())
             .and()
                 .logout()
+                .deleteCookies("JSESSIONID")
                 .logoutSuccessHandler(new HttpStatusReturningLogoutSuccessHandler(HttpStatus.OK)).permitAll()
                 .invalidateHttpSession(true);
 
@@ -99,7 +102,13 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
                 Authentication authentication) throws IOException, ServletException {
                     //RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
                     //redirectStrategy.sendRedirect(request, response, "/user");
-                    response.getWriter().append("Autenticado com sucesso.");
+                    UsuarioDetailsImpl userDet =(UsuarioDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+                    String resp = new ObjectMapper().writeValueAsString(userDet.getUsuario());
+                    
+                    response.setHeader("Content-Type", "application/json;charset=utf-8");
+                    
+                    response.setContentType("application/json");
+                    response.getWriter().print(resp);
                     response.setStatus(200);
             }
         };
@@ -152,10 +161,11 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
       CorsConfigurationSource corsConfigurationSource() 
       {
           CorsConfiguration configuration = new CorsConfiguration();
-          configuration.setAllowedOrigins(Arrays.asList("*"));
+          configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
           configuration.setAllowedMethods(Arrays.asList("*"));
           configuration.setAllowedHeaders(Arrays.asList("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
           "Access-Control-Request-Headers", "Allow-Origin-With-Credentials"));
+          configuration.setAllowCredentials(true);
           UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
           source.registerCorsConfiguration("/**", configuration);
           return source;

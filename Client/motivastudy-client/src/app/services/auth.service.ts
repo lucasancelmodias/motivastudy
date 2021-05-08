@@ -10,10 +10,9 @@ import { HttpParams } from '@angular/common/http';
 })
 export class AuthService {
 
-  httpOptions = {headers: new HttpHeaders(
-    {'Content-Type': 'application/x-www-form-urlencoded'
-    }
-    )
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'}),
+    observe:'response' as 'response'
   };
 
 constructor(
@@ -26,12 +25,6 @@ constructor(
     .set('password', senha);
     console.log(email)
     return this.http.post<any>(`${environment.url}/dologin`, body.toString(), this.httpOptions)
-      .pipe(map(usuario => {
-        console.log(usuario);
-
-        return usuario;
-      }))
-
   }
 
 }

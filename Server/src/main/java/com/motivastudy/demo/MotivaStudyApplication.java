@@ -19,10 +19,12 @@ public class MotivaStudyApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-					.allowedOrigins("*")
+					.allowedOrigins("http://localhost:4200")
 					.allowedHeaders("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
 					"Access-Control-Request-Headers")
-					.allowedMethods("PUT", "DELETE", "GET", "POST", "OPTIONS");
+					.allowedMethods("PUT", "DELETE", "GET", "POST", "OPTIONS")
+					.exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials")
+					.allowCredentials(true).maxAge(3600);
 			}
 		};
 	}

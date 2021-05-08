@@ -23,6 +23,7 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -61,7 +62,7 @@ public class Usuario implements Serializable {
         joinColumns = {@JoinColumn(name="usuario_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name="perfil_id", referencedColumnName = "id")}
     )
-    @JsonBackReference
+    @JsonManagedReference
     private Set<Perfil> perfis = new HashSet<>();
 
     @OneToOne(cascade = CascadeType.ALL)

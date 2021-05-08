@@ -13,16 +13,14 @@ export class FormLComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   onSubmit(loginForm:NgForm){
     console.log(loginForm.value);
     this.auth.login(loginForm.value.username,loginForm.value.password)
-    .pipe(first())
-    .subscribe(data => {
-      console.log(data)
+    .subscribe(response => {
+      console.log('response', response)
     },
     error => {
-      console.log(error)
+      console.log('error',error)
     })
   }
 

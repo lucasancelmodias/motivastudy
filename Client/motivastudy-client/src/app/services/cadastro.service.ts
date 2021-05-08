@@ -9,6 +9,7 @@ export class CadastroService {
 constructor(private http: HttpClient) { }
 
 
+
   cadastrarUsuario(form:any){
     this.http.post(`${environment.url}/cadastro`, form.value)
     .subscribe(
@@ -18,5 +19,19 @@ constructor(private http: HttpClient) { }
       console.error(error.error);
     }
     )
+  }
+
+  requisicaoProfessor(form:any){
+    let req = {isProfessor: form.value.CheckProfessor, texto: form.value.descricaoContribuinte};
+    this.http.post(`${environment.url}/usuario/professor`, req)
+    .subscribe(
+      (response:any)=>{
+        console.log(response);
+      },
+      (error:any)=>{
+        console.log(error);
+      }
+    )
+    console.log('req', req);
   }
 }

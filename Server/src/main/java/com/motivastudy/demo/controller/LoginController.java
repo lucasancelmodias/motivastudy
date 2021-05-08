@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 @RestController
 public class LoginController {
     
@@ -54,7 +54,7 @@ public class LoginController {
     public ResponseEntity usuarioUpdate(@RequestBody @Valid CadastroForm form){
         return userService.usuarioUpdate(form);
     }
-
+    @CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
     @PostMapping("usuario/professor")
     public ResponseEntity<RequisicaoProfessor> salvarRequisicao(@RequestBody RequisicaoProfessor req){
         

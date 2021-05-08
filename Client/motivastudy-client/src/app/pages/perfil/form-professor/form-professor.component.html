@@ -1,4 +1,4 @@
-<form>
+<form #requisicaoForm="ngForm" (ngSubmit)="requisicaoProfessor(requisicaoForm)">
   <div class="form-group">
     <!-- Título-->
     <span>
@@ -8,24 +8,24 @@
     <!-- Professor -->
     <!-- Check -->
     <span class="checkbox-el">
-      <input class="input-checkbox" id="SouProfessor" type="checkbox" name="CheckProfessor" value="1">
+      <input class="input-checkbox" id="SouProfessor" type="checkbox" name="CheckProfessor" value="1" ngModel>
       <div class="checkbox-circle"></div>
     </span>
     <label class="form-check-label " for="CheckProfessor"> Sou um professor</label>
 
     <!-- CFEP -->
-    <input type="text" class="form-control" id="InputCefep" placeholder="CFEP" name="cfep">
+    <input type="text" class="form-control" id="InputCefep" placeholder="CFEP" name="cfep" ngModel>
     <!-- Outro-->
     <!-- Check -->
     <span class="checkbox-el">
-      <input class="input-checkbox" id="SouContribuinte" type="checkbox" name="checkOutro" value="1">
+      <input class="input-checkbox" id="SouContribuinte" type="checkbox" name="checkOutro" value="1" ngModel>
       <div class="checkbox-circle"></div>
     </span>
     <label class="form-check-label " for="checkOutro"> Outro</label>
 
     <!-- Outro Motivo -->
     <input type="text" class="form-control" id="InputMotivo" placeholder="Digite o motivo de querer ser contribuinte"
-      name="descricaoContribuinte">
+      name="descricaoContribuinte" ngModel>
 
     <!-- btn Enviar -->
     <div class="d-flex justify-content-center">
