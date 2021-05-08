@@ -99,8 +99,10 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
         @Override
         public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
                 Authentication authentication) throws IOException, ServletException {
-                    RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
-                    redirectStrategy.sendRedirect(request, response, "/user");
+                    //RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
+                    //redirectStrategy.sendRedirect(request, response, "/user");
+                    response.getWriter().append("Autenticado com sucesso.");
+                    response.setStatus(200);
             }
         };
       }
@@ -155,7 +157,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter{
           configuration.setAllowedOrigins(Arrays.asList("*"));
           configuration.setAllowedMethods(Arrays.asList("*"));
           configuration.setAllowedHeaders(Arrays.asList("Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
-          "Access-Control-Request-Headers"));
+          "Access-Control-Request-Headers", "Allow-Origin-With-Credentials"));
           UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
           source.registerCorsConfiguration("/**", configuration);
           return source;

@@ -9,7 +9,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './pages/cadastro/form/form.component';
 import { FormLComponent } from './pages/login/form-l/form-l.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpRequestInterceptor } from './services/HttpRequestInterceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
