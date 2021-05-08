@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import com.motivastudy.demo.dto.CadastroForm;
+import com.motivastudy.demo.models.RequisicaoProfessor;
 import com.motivastudy.demo.models.Usuario;
 import com.motivastudy.demo.models.UsuarioDetailsImpl;
 import com.motivastudy.demo.service.UsuarioService;
@@ -52,6 +53,12 @@ public class LoginController {
     @PostMapping("usuario/update")
     public ResponseEntity usuarioUpdate(@RequestBody @Valid CadastroForm form){
         return userService.usuarioUpdate(form);
+    }
+
+    @PostMapping("usuario/professor")
+    public ResponseEntity<RequisicaoProfessor> salvarRequisicao(@RequestBody RequisicaoProfessor req){
+        
+        return userService.requisicaoProfessor(req);
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -11,7 +11,10 @@ import java.util.Set;
 
 import com.motivastudy.demo.dto.CadastroForm;
 import com.motivastudy.demo.models.Perfil;
+import com.motivastudy.demo.models.RequisicaoProfessor;
 import com.motivastudy.demo.models.Usuario;
+import com.motivastudy.demo.models.UsuarioDetailsImpl;
+import com.motivastudy.demo.repository.RequisicaoProfessorRepository;
 import com.motivastudy.demo.repository.UsuarioRepository;
 
 
@@ -19,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -27,10 +31,12 @@ import org.springframework.stereotype.Service;
 public class UsuarioService {
     private UsuarioRepository usuarioRepo;
     private PerfilService perfilService;
+    private RequisicaoProfessorRepository requisicaoProfessorRepository;
     @Autowired
-    public UsuarioService(UsuarioRepository usuarioRepository, PerfilService perfilService){
+    public UsuarioService(UsuarioRepository usuarioRepository, PerfilService perfilService, RequisicaoProfessorRepository requisicaoProfessorRepository){
         this.usuarioRepo = usuarioRepository;
         this.perfilService = perfilService;
+        this.requisicaoProfessorRepository = requisicaoProfessorRepository;
     }
 
     public Optional<Usuario> findByNome(Usuario usuario){
@@ -112,4 +118,13 @@ public class UsuarioService {
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepo.save(userUpdate));
 	}
+
+    public ResponseEntity<RequisicaoProfessor> requisicaoProfessor(RequisicaoProfessor reqProf){
+        UsuarioDetailsImpl userDet =(UsuarioDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        RequisicaoProfessor reqSave = requisicaoProfessorRepository.save(reqProf);
+        Usuario user = userDet.getUsuario();
+        user.setRequisicaoProfessor(reqSave);
+        usuarioRepo.save(user);
+        return ResponseEntity.status(HttpStatus.CREATED).body(reqSave);
+    }
 }

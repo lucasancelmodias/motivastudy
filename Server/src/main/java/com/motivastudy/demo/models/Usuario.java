@@ -15,13 +15,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
 
@@ -60,10 +61,11 @@ public class Usuario implements Serializable {
         joinColumns = {@JoinColumn(name="usuario_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name="perfil_id", referencedColumnName = "id")}
     )
-    @JsonManagedReference
+    @JsonBackReference
     private Set<Perfil> perfis = new HashSet<>();
 
-
-
-    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "requisicao_professor_id", referencedColumnName = "id")
+    private RequisicaoProfessor requisicaoProfessor;
+ 
 }
