@@ -18,8 +18,8 @@ public class PerfilService {
         this.perfilRepo = perfilRepo;
     }
 
-    public Optional<Perfil> findByNome(String nome){
-        return perfilRepo.findByNome(nome);
+    public Optional<Perfil> findPerfilByNome(String nome){
+        return perfilRepo.findPerfilByNome(nome);
     }
 
     public List<Perfil> findAll(){

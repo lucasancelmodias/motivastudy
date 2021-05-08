@@ -8,6 +8,9 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormComponent } from './pages/cadastro/form/form.component';
 import { FormLComponent } from './pages/login/form-l/form-l.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpRequestInterceptor } from './services/HttpRequestInterceptor';
 import { CadastroQuestoesComponent } from './pages/cadastro-questoes/cadastro-questoes.component';
 import { FormQComponent } from './pages/cadastro-questoes/form-q/form-q.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -40,9 +43,11 @@ import { FormProfessorComponent } from './pages/perfil/form-professor/form-profe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

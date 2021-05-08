@@ -1,4 +1,4 @@
-<form>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
   <div class="form-group">
     <!-- Voltar para a  -->
     <a routerLink="/"> <button type="button" class="btn btn-outline-primary btn-back" data-mdb-ripple-color="dark">
@@ -6,9 +6,9 @@
     <!-- Título -->
     <h2> Faça seu <span id="text">login</span></h2>
     <!-- Campo do email-->
-    <input type="text" class="form-control" id="InputNome" placeholder="Seu e-mail cadastrado">
+    <input type="text" class="form-control" id="InputEmail" placeholder="Seu e-mail cadastrado" name="username" ngModel>
     <!-- Campo da senha-->
-    <input type="password" class="form-control" id="InputPassword" placeholder="Sua senha">
+    <input type="password" class="form-control" id="InputPassword" placeholder="Sua senha" name="password" ngModel>
   </div>
   <!-- Esqueceu a senha link-->
   <small class="form-text text-muted d-flex justify-content-center">Esqueci minha senha</small>
@@ -21,7 +21,7 @@
     <label class="form-check-label " for="checkLembrarUsuario"> Lembrar usuário</label>
   </div>
   <!-- Botão login-->
-  <div class="d-flex justify-content-center"><button type="submitLogin" class="btn btn-primary btn-grad">Login</button>
+  <div class="d-flex justify-content-center"><button type="submitLogin" class="btn btn-primary btn-grad" >Login</button>
   </div>
   <!-- Link cadastro-->
   <h3 class="form-text text-muted d-flex justify-content-center">Não tem conta? &nbsp;<a routerLink="/cadastro">

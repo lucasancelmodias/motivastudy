@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { from } from 'rxjs';
 
 // Importação dos componentes das páginas 
 import { HomeComponent } from "./pages/home/home.component";
