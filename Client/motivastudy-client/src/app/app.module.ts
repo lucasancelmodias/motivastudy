@@ -21,6 +21,7 @@ import { QuestaoComponent } from './pages/questoes/questao/questao.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { FormAlterarDadosComponent } from './pages/perfil/form-alterar-dados/form-alterar-dados.component';
 import { FormProfessorComponent } from './pages/perfil/form-professor/form-professor.component';
+import { ProgressoComponent } from './pages/questoes/progresso/progresso.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FormProfessorComponent } from './pages/perfil/form-professor/form-profe
     QuestaoComponent,
     PerfilComponent,
     FormAlterarDadosComponent,
-    FormProfessorComponent
+    FormProfessorComponent,
+    ProgressoComponent
   ],
   imports: [
     BrowserModule,

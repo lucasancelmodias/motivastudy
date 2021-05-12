@@ -1,3 +1,12 @@
+.nav-tabs, .nav-item,.nav-link  {
+border: 0;
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-decoration: none;
+display: block;
+width: 100%;
+}
 
 /** cor do menu e posição */
 .wrapper {
@@ -8,7 +17,6 @@
   box-shadow: -10px 10px 20px -15px #282269;
   color:#6d6a8a;
 }
-
 
 /** Text do campo que fica a matéria */
 .wrapper label {
@@ -22,9 +30,7 @@ font-size: 16px;
 border-radius: 2px;
 top:4px;
 font-family: 'NexaBold';
-
 }
-
 
 /** Imício da lista  */
 .wrapper ul {
