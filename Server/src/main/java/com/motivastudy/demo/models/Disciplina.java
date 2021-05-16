@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Entity
@@ -21,6 +24,7 @@ public class Disciplina {
 
     private String nome;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "disciplina")
     private List<Topico> topicos;
 }

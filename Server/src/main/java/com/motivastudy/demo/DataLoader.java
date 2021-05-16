@@ -78,9 +78,11 @@ public class DataLoader implements ApplicationRunner{
     private void carregarDisciplina() {
         Questao questao = new Questao();
         Disciplina disp = new Disciplina();
-
+        Disciplina disp2 = new Disciplina();
+        disp2.setNome("Geografia");
         disp.setNome("Matemática");
         disp = dispRepo.save(disp);
+        dispRepo.save(disp2);
         Topico topico = new Topico();
         topico.setDisciplina(disp);
         topico.setNome("Geometria Analitica");
