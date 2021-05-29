@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
@@ -16,11 +17,14 @@ export class FormLComponent implements OnInit {
   onSubmit(loginForm:NgForm){
     console.log(loginForm.value);
     this.auth.login(loginForm.value.username,loginForm.value.password)
-    .subscribe(response => {
+    .subscribe(
+      (response:any) => {
       console.log('response', response)
-    },
-    error => {
-      console.log('error',error)
+      //Direciona page login
+      window.location.href = '/questoes';
+    },(error: HttpErrorResponse) => {
+      console.log('error Message',error.error.mensagem)
+      alert(error.error.mensagem);
     })
   }
 
