@@ -1,0 +1,47 @@
+/** ROW principal centralizada */
+.row {
+  margin-top: 2%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+/** Pegando  a imagem de fundo */
+#grad {
+  background-image: url('src\assets\img\img2.jpg');
+}
+
+/** Colocando a font e posicionando */
+body {
+  font-family: 'NexaLight';
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+/** Textos */
+h1 {
+  text-align: center;
+  padding-top: 55px;
+  padding-bottom: 30px;
+  color: #330867;
+  font-family: 'MontserratBold';
+  font-size: 50px;
+}
+
+/** texto em gradiente*/
+#text {
+  background: linear-gradient(to right, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+  font-size: 50px;
+}
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  padding: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, #30CFD0, #330867);
+}

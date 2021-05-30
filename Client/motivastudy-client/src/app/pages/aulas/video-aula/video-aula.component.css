@@ -1,0 +1,26 @@
+body {
+  padding: 20px;
+  font-family: "Nexa";
+  padding: 4%;
+  background: #fcfcfc;
+  border-radius: 5px;
+  box-shadow: 10px 10px 50px -30px #282269;
+  color: #6d6a8a;
+  margin-left: 2%;
+  width: fit-content;
+}
+
+
+h3 {
+  color: #330867;
+  font-family: 'MontserratBold';
+  font-size: 30px;
+  padding-bottom: 2%;
+}
+
+h4 {
+  color: #db40a5;
+  font-family: 'MontserratBold';
+  font-size: 20px;
+  padding-bottom: 2%;
+}
