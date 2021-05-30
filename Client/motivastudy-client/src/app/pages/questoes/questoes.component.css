@@ -47,12 +47,3 @@ h1{
 .border-gradient-purple {
   border-image-source: linear-gradient(to right, #db40a5, #330867);
 }
-
-.questao{
-  padding: 2%;
-  background: #fcfcfc;
-  border-radius: 5px;
-  box-shadow: 10px 10px 50px -30px #282269;
-  color:#6d6a8a;
-  margin-left: 2%;
-}
