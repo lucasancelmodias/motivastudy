@@ -4,6 +4,7 @@ import { Disciplina } from 'src/app/models/Disciplina';
 import { NgForm } from '@angular/forms';
 import { Topico } from 'src/app/models/Topico';
 import { QuestaoService } from 'src/app/services/questao.service';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-form-q',
   templateUrl: './form-q.component.html',
@@ -29,7 +30,16 @@ export class FormQComponent implements OnInit {
   salvarQuestao(questaoForm:NgForm){
     console.log(questaoForm.form.value);
 
-    this.questService.cadastrarQuestao(questaoForm.form.value).subscribe(resp => console.log(resp));
+    this.questService.cadastrarQuestao(questaoForm.form.value)
+    .subscribe(
+      (response:any) => {
+      alert(response.message); //Response com message do back
+      //window.location.href = '/login'; //Redirecionamos para algum lugar???
+      },(error: HttpErrorResponse) => {
+        console.error(error.error);
+        alert(error.error.message);
+      }
+      );
   }
 
   changeDisciplina(event:any){

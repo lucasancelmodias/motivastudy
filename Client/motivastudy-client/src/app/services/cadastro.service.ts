@@ -27,16 +27,34 @@ constructor(private http: HttpClient) { }
   }
 
   requisicaoProfessor(form:any){
-    let req = {isProfessor: form.value.CheckProfessor, texto: form.value.descricaoContribuinte};
-    this.http.post(`${environment.url}/usuario/professor`, req)
-    .subscribe(
-      (response:any)=>{
-        console.log(response);
-      },
-      (error:any)=>{
-        console.log(error);
-      }
-    )
+    let error:string;
+    let req = null;
+    console.log('Form: ' + form.value.CheckProfessor);
+    console.log('Form2: ' + !form.value.cfep);
+    if(form.value.CheckProfessor && !form.value.cfep){
+      error = 'Informe seu CFEP'
+    } else if(form.value.CheckProfessor && form.value.checkOutro){
+      error = 'Selecione somente uma opção'
+    } else if (form.value.checkOutro && !form.value.descricaoContribuinte){
+      error = 'Informe o motivo da Contribuição'
+    } else if (form.value.CheckProfessor && form.value.cfep){
+      req = {isProfessor: form.value.CheckProfessor, texto: form.value.cfep};
+    } else if (form.value.checkOutro && form.value.descricaoContribuinte){
+      req = {isProfessor: form.value.checkOutro, texto: form.value.descricaoContribuinte};
+    }
+    console.log('error: ' +error);
+    if(error == null) {
+      console.log('call')
+      this.http.post(`${environment.url}/usuario/professor`, req)
+      .subscribe(
+        (response:any)=>{
+          console.log(response);
+        },
+        (error:any)=>{
+          console.log(error);
+        }
+      )
+    }
     console.log('req', req);
   }
 }
