@@ -22,6 +22,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { FormAlterarDadosComponent } from './pages/perfil/form-alterar-dados/form-alterar-dados.component';
 import { FormProfessorComponent } from './pages/perfil/form-professor/form-professor.component';
 import { ProgressoComponent } from './pages/questoes/progresso/progresso.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProgressoComponent } from './pages/questoes/progresso/progresso.compone
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true}],
   bootstrap: [AppComponent]
