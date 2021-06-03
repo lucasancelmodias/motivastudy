@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent, SafePipe } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -26,6 +26,9 @@ import { AulasComponent } from './pages/aulas/aulas.component';
 import { SidebarAulasComponent } from './pages/aulas/sidebar-aulas/sidebar-aulas.component';
 import { VideoAulaComponent } from './pages/aulas/video-aula/video-aula.component';
 import { HomeAulasComponent } from './pages/aulas/home-aulas/home-aulas.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { CommonModule } from '@angular/common';
+import { VideosComponent } from './pages/videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -49,13 +52,17 @@ import { HomeAulasComponent } from './pages/aulas/home-aulas/home-aulas.componen
     AulasComponent,
     SidebarAulasComponent,
     VideoAulaComponent,
-    HomeAulasComponent
+    HomeAulasComponent,
+    VideosComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true}],
   bootstrap: [AppComponent]

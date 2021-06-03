@@ -12,6 +12,10 @@ export class HttpRequestInterceptor implements HttpInterceptor {
     //   return next.handle(req);
     // }
 
+    if(req.url.includes('googleapis')){
+      console.log('skip login', req);
+      return next.handle(req);
+    }
     req = req.clone({withCredentials: true});
     console.log('outras requisições', req);
     console.log('headers', req.headers.keys())
