@@ -33,8 +33,7 @@ export class FormQComponent implements OnInit {
     this.questService.cadastrarQuestao(questaoForm.form.value)
     .subscribe(
       (response:any) => {
-      alert(response.message); //Response com message do back
-      //window.location.href = '/login'; //Redirecionamos para algum lugar???
+      alert(response.message);
       },(error: HttpErrorResponse) => {
         console.error(error.error);
         alert(error.error.message);

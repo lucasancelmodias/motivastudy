@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 import { AuthService } from '../../../services/auth.service';
 @Component({
@@ -10,7 +11,9 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class FormLComponent implements OnInit {
 
-  constructor(private auth:AuthService) { }
+  constructor(
+    private auth:AuthService,
+    private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +24,7 @@ export class FormLComponent implements OnInit {
       (response:any) => {
       console.log('response', response)
       //Direciona page login
-      window.location.href = '/questoes';
+      this.route.navigate(['questoes']);
     },(error: HttpErrorResponse) => {
       console.log('error Message',error.error.mensagem)
       alert(error.error.mensagem);

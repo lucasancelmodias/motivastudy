@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
 
-constructor(private http: HttpClient) { }
-
-
+constructor(
+  private http: HttpClient,
+  private route:Router) { }
 
   cadastrarUsuario(form:any){
     console.log('FORM >>> ' +form);
@@ -18,7 +19,7 @@ constructor(private http: HttpClient) { }
       (response:any) => {
         alert(response.message); //Response com message do back
         //Direciona page login
-        window.location.href = '/login';
+        this.route.navigate(['login']);
     },(error: HttpErrorResponse) => {
       console.error(error.error);
       alert(error.error.message);
@@ -27,11 +28,13 @@ constructor(private http: HttpClient) { }
   }
 
   requisicaoProfessor(form:any){
-    let error:string;
+    let error = null;
     let req = null;
-    console.log('Form: ' + form.value.CheckProfessor);
-    console.log('Form2: ' + !form.value.cfep);
-    if(form.value.CheckProfessor && !form.value.cfep){
+    if(!form.value.CheckProfessor && !form.value.cfep && 
+      !form.value.checkOutro && !form.value.descricaoContribuinte){
+        error = 'Nenhum dado Informado';
+    }
+    else if(form.value.CheckProfessor && !form.value.cfep){
       error = 'Informe seu CFEP'
     } else if(form.value.CheckProfessor && form.value.checkOutro){
       error = 'Selecione somente uma opção'
@@ -42,19 +45,18 @@ constructor(private http: HttpClient) { }
     } else if (form.value.checkOutro && form.value.descricaoContribuinte){
       req = {isProfessor: form.value.checkOutro, texto: form.value.descricaoContribuinte};
     }
-    console.log('error: ' +error);
-    if(error == null) {
-      console.log('call')
+    if(error == null && req != null) {
       this.http.post(`${environment.url}/usuario/professor`, req)
       .subscribe(
         (response:any)=>{
           console.log(response);
+          alert('Solicitação feita com sucesso. Aguarde entrarmos em contato');
+          window.location.reload();
         },
         (error:any)=>{
           console.log(error);
         }
       )
-    }
-    console.log('req', req);
+    } else alert(error);
   }
 }
