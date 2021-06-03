@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,9 @@ import { FormAlterarDadosComponent } from './pages/perfil/form-alterar-dados/for
 import { FormProfessorComponent } from './pages/perfil/form-professor/form-professor.component';
 import { ProgressoComponent } from './pages/questoes/progresso/progresso.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CommonModule } from '@angular/common';
+import {VideosComponent} from './pages/videos/videos.component';
+import { SafePipe } from './app.component';
 
 @NgModule({
   declarations: [
@@ -42,14 +45,17 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     PerfilComponent,
     FormAlterarDadosComponent,
     FormProfessorComponent,
-    ProgressoComponent
+    ProgressoComponent,
+    VideosComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    CommonModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpRequestInterceptor, multi: true}],
   bootstrap: [AppComponent]
