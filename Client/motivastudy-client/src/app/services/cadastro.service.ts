@@ -59,4 +59,23 @@ constructor(
       )
     } else alert(error);
   }
+
+  updateUser(form:any){
+    console.log('form: ' +form);
+    console.log('form.value: ' +form.value.nome); //
+    console.log('form.value: ' +form.value.senha);
+    console.log('form.value: ' +form.value.ConfirmarSenha);
+    this.http.post(`${environment.url}/usuario/update`, form.value)
+    .subscribe(
+      (response:any) =>{
+        console.log(response);
+        alert(response.message);
+        window.location.reload();
+      }, 
+      (error:any)=>{
+        console.log(error.message);
+        alert(error.message);
+      }
+    )
+  }
 }
