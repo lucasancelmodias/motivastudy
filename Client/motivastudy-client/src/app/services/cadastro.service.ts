@@ -62,19 +62,21 @@ constructor(
 
   updateUser(form:any){
     let erro = "As senhas devem ser iguais";
-    if(form.value.senha == form.value.senhaconfirmacao) erro = null;
+    let boolean = true;
+    if(form.value.senha == form.value.senhaconfirmacao) {
+      erro = null;
+      boolean = false;
+    } 
     if(erro == null || (form.value.senha != null && form.value.senhaconfirmacao != null)){
+      console.log('Entrou no metodo da chamada');
       this.http.post(`${environment.url}/usuario/update`, form.value)
       .subscribe(
         (response:any) =>{
           alert("Dados Alterados com Sucesso!!");
-          //window.location.reload();
-        }, 
-        (error:any)=>{
-          console.log(error.message);
-          alert(error.error.message);
+          window.location.reload();
         }
       )
-    } alert(erro);
+    } 
+    if(boolean) alert(erro);
   }
 }
