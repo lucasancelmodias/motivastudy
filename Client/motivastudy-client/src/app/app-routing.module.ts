@@ -9,6 +9,7 @@ import { CadastroQuestoesComponent } from "./pages/cadastro-questoes/cadastro-qu
 import { QuestoesComponent} from "./pages/questoes/questoes.component"
 import { PerfilComponent } from "./pages/perfil/perfil.component"
 import { VideosComponent } from './pages/videos/videos.component';
+import {AulasComponent} from './pages/aulas/aulas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: "cadastroQuestoes", component: CadastroQuestoesComponent },
   { path: "questoes", component: QuestoesComponent },
   { path: "perfil", component: PerfilComponent},
-  {path: "videos", component: VideosComponent}
+  {path: "videos", component: AulasComponent}
 ];
 
 @NgModule({

@@ -24,3 +24,25 @@ h4 {
   font-size: 20px;
   padding-bottom: 2%;
 }
+
+.btn-grad {
+  border-radius: 50px;
+  font-size: 15px;
+  border: 0%;
+  border-style: none;
+  background-image: linear-gradient(to right, #330867 1%, #30CFD0 50%);
+  margin-top: 20px;
+  padding: 10px 75px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
