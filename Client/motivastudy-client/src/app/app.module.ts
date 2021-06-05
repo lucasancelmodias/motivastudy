@@ -29,6 +29,9 @@ import { HomeAulasComponent } from './pages/aulas/home-aulas/home-aulas.componen
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CommonModule } from '@angular/common';
 import { VideosComponent } from './pages/videos/videos.component';
+import { ApostilaComponent } from './pages/apostila/apostila.component';
+import { CronogramaComponent } from './pages/apostila/cronograma/cronograma.component';
+import { MetodosEstudoComponent } from './pages/apostila/metodos-estudo/metodos-estudo.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +57,10 @@ import { VideosComponent } from './pages/videos/videos.component';
     VideoAulaComponent,
     HomeAulasComponent,
     VideosComponent,
-    SafePipe
+    SafePipe,
+    ApostilaComponent,
+    CronogramaComponent,
+    MetodosEstudoComponent
   ],
   imports: [
     BrowserModule,
