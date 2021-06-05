@@ -27,6 +27,10 @@ constructor(
     )
   }
 
+  getUser() {
+    return this.http.get(`${environment.url}/user`)
+  }
+
   requisicaoProfessor(form:any){
     let error = null;
     let req = null;

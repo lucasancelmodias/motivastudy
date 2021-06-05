@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import { NgForm } from '@angular/forms';
 import { CadastroService } from 'src/app/services/cadastro.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-form-alterar-dados',
@@ -14,15 +12,10 @@ export class FormAlterarDadosComponent implements OnInit {
   nome:string;
   email:string;
 
-  constructor(private cadastroServ: CadastroService, 
-              private http: HttpClient) {  }
+  constructor(private cadastroServ: CadastroService) {  }
 
   ngOnInit(): void {
-    this.getUser();
-  }
-
-  getUser() : void{
-    this.http.get(`${environment.url}/user`)
+    this.cadastroServ.getUser()
     .subscribe(
       (response:any)=>{
         this.nome = response.nome;
@@ -30,8 +23,11 @@ export class FormAlterarDadosComponent implements OnInit {
       }
     )
   }
+
   updateData(requisicaoForm:NgForm){
     this.cadastroServ.updateUser(requisicaoForm);
+    console.log('requisicaoForm.value.nome: ' +requisicaoForm.value.nome);
+    this.nome = requisicaoForm.value.nome;
   }
 
 }
