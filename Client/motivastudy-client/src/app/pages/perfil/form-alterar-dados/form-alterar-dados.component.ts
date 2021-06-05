@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { CadastroService } from 'src/app/services/cadastro.service';
 
 @Component({
@@ -7,27 +8,30 @@ import { CadastroService } from 'src/app/services/cadastro.service';
   templateUrl: './form-alterar-dados.component.html',
   styleUrls: ['./form-alterar-dados.component.css']
 })
-export class FormAlterarDadosComponent implements OnInit {
+export class FormAlterarDadosComponent implements OnInit, OnDestroy {
 
   nome:string;
   email:string;
+  private subscription: Subscription
 
   constructor(private cadastroServ: CadastroService) {  }
 
   ngOnInit(): void {
-    this.cadastroServ.getUser()
+    this.subscription = this.cadastroServ.getUser()
     .subscribe(
       (response:any)=>{
         this.nome = response.nome;
         this.email = response.email;
       }
-    )
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
   }
 
   updateData(requisicaoForm:NgForm){
     this.cadastroServ.updateUser(requisicaoForm);
-    console.log('requisicaoForm.value.nome: ' +requisicaoForm.value.nome);
-    this.nome = requisicaoForm.value.nome;
   }
 
 }
