@@ -61,21 +61,20 @@ constructor(
   }
 
   updateUser(form:any){
-    console.log('form: ' +form);
-    console.log('form.value: ' +form.value.nome); //
-    console.log('form.value: ' +form.value.senha);
-    console.log('form.value: ' +form.value.ConfirmarSenha);
-    this.http.post(`${environment.url}/usuario/update`, form.value)
-    .subscribe(
-      (response:any) =>{
-        console.log(response);
-        alert(response.message);
-        window.location.reload();
-      }, 
-      (error:any)=>{
-        console.log(error.message);
-        alert(error.message);
-      }
-    )
+    let erro = "As senhas devem ser iguais";
+    if(form.value.senha == form.value.senhaconfirmacao) erro = null;
+    if(erro == null || (form.value.senha != null && form.value.senhaconfirmacao != null)){
+      this.http.post(`${environment.url}/usuario/update`, form.value)
+      .subscribe(
+        (response:any) =>{
+          alert("Dados Alterados com Sucesso!!");
+          //window.location.reload();
+        }, 
+        (error:any)=>{
+          console.log(error.message);
+          alert(error.error.message);
+        }
+      )
+    } alert(erro);
   }
 }
