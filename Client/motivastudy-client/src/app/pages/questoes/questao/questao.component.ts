@@ -28,4 +28,5 @@ export class QuestaoComponent implements OnInit, OnChanges {
     console.log(this.topicoId)
   }
 
+
 }
