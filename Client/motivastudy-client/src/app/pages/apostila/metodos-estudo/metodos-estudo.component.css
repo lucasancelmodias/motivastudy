@@ -1,0 +1,30 @@
+body {
+  font-family: "Nexa";
+  padding: 4%;
+  background: #fcfcfc;
+  border-radius: 10px;
+  box-shadow: -10px 10px 40px -20px #282269;
+  color: #6d6a8a;
+  height: fit-content;
+  margin-left: 3%;
+}
+
+h2 {
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: 300;
+  display: block;
+  background-color: #fcfcfcf5;
+  margin-top: 20px;
+  font-family: 'NexaBold';
+  border-bottom: #30CFD0 2px solid;
+  color: #282269;
+}
+
+/** texto em gradiente*/
+#text {
+  background: linear-gradient(to right, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+}

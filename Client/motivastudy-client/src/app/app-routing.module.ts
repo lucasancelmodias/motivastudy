@@ -9,7 +9,10 @@ import { CadastroQuestoesComponent } from "./pages/cadastro-questoes/cadastro-qu
 import { QuestoesComponent} from "./pages/questoes/questoes.component"
 import { PerfilComponent } from "./pages/perfil/perfil.component"
 import { VideosComponent } from './pages/videos/videos.component';
-import {AulasComponent} from './pages/aulas/aulas.component';
+import { AulasComponent } from './pages/aulas/aulas.component';
+import { ApostilaComponent } from './pages/apostila/apostila.component';
+import { EnemComponent } from './pages/enem/enem.component';
+import { SisuComponent } from './pages/sisu/sisu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: "cadastroQuestoes", component: CadastroQuestoesComponent },
   { path: "questoes", component: QuestoesComponent },
   { path: "perfil", component: PerfilComponent},
-  {path: "videos", component: AulasComponent}
+  { path: "videos", component: AulasComponent },
+  { path: "apostila", component: ApostilaComponent },
+  { path: "enem", component: EnemComponent },
+   { path: "sisu", component: SisuComponent }
 ];
 
 @NgModule({
