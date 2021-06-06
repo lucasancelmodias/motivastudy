@@ -9,15 +9,16 @@
       <div id="VM1T1" class="tab-pane fade">
           <!-- titulo video -->
           <h3>{{videos[contador].snippet.title}}</h3>
-          
+
           <!-- iFrame das playlist -->
           <iframe width="1100" height="655" [src]="getVideoUrl(videos[contador].contentDetails.videoId)|safe"
-            title="{{videos[contador].snippet.title}}" frameborder="0"
+            title="{{videos[contador].snippet.title}}"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
           </iframe>
           <!-- Botões para percorrer os videos da playlist -->
           <div class="d-flex justify-content-around">
             <button (click)="videoAnterior()" class="btn btn-primary btn-grad">Aula Anterior</button>
+            {{contador+1}}/{{tamanhoPlalist}}
             <button (click)="proximoVideo()" class="btn btn-primary btn-grad">Próxima Aula</button>
           </div>
           <!-- Descrição do video em questão -->
@@ -29,4 +30,4 @@
           </div>
       </div>
     </div>
-    
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Topico } from 'src/app/models/Topico';
 @Component({
   selector: 'app-questoes',
   templateUrl: './questoes.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class QuestoesComponent implements OnInit {
 
 
-  topicoIdAtual: number
+  topicoAtual: Topico
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +16,6 @@ export class QuestoesComponent implements OnInit {
 
   topicoChange(event){
     console.log('evento no pai', event)
-    this.topicoIdAtual = event;
+    this.topicoAtual = event;
   }
 }

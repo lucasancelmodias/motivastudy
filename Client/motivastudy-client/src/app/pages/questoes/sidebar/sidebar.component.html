@@ -10,7 +10,7 @@
         <ul class="nav nav-tabs">
           <li class="nav-item" *ngFor="let topico of disciplina.topicos">
             <!--  Matemática 1 - Tópico 1 - Matemática Básica -->
-            <a class="nav-link" [attr.data-sectionvalue]="topico.id" (click)="alterarTopico($event)">{{topico.nome}}</a>
+            <a class="nav-link" (click)="alterarTopico($event,topico)">{{topico.nome}}</a>
           </li>
         </ul>
       </div>

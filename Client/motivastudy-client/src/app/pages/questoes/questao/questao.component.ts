@@ -1,31 +1,41 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
 import { QuestaoService } from 'src/app/services/questao.service';
 import { Questao } from 'src/app/models/Questao';
+import { Topico } from 'src/app/models/Topico';
 @Component({
   selector: 'app-questao',
   templateUrl: './questao.component.html',
   styleUrls: ['./questao.component.css']
 })
-export class QuestaoComponent implements OnInit, OnChanges {
+export class QuestaoComponent implements OnInit, OnChanges, OnDestroy {
 
-  @Input() topicoId: number
+  @Input() topico: Topico
   questoes: Questao[]
+  dadosCarregados: boolean
   constructor(private quesService: QuestaoService) { }
+  ngOnDestroy(): void {
+    this.topico = null;
+    this.questoes = null;
+  }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('changed',changes.topicoId.currentValue)
-    if(!changes.topicoId.currentValue){
+    console.log('changed',changes.topico.currentValue)
+    if(!changes.topico.currentValue){
       return
     }
-    this.quesService.buscarQuestao(changes.topicoId.currentValue)
+    this.quesService.buscarQuestao(changes.topico.currentValue.id)
       .subscribe((response) => {
         console.log('questao resp',response)
         this.questoes = response;
+        this.dadosCarregados = true;
       })
   }
 
   ngOnInit(): void {
     console.log('componente questao')
-    console.log(this.topicoId)
+    console.log(this.topico)
+  }
+  possuiQuestoes(): boolean{
+    return this.questoes?.length > 0
   }
 
 

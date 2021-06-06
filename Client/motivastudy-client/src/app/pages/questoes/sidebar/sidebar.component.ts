@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DisciplinaService } from '../../../services/disciplina.service';
 import { Disciplina } from 'src/app/models/Disciplina';
+import { Topico } from 'src/app/models/Topico';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -9,7 +10,7 @@ import { Disciplina } from 'src/app/models/Disciplina';
 export class SidebarComponent implements OnInit {
 
   disciplinas: Disciplina[]
-  @Output() topico: EventEmitter<number> = new EventEmitter<number>();
+  @Output() topico: EventEmitter<Topico> = new EventEmitter<Topico>();
   constructor(private dispService:DisciplinaService){}
 
   ngOnInit(){
@@ -20,12 +21,12 @@ export class SidebarComponent implements OnInit {
       })
   }
 
-  alterarTopico(event){
+  alterarTopico(event,topico:Topico){
     event.stopPropagation()
     event.preventDefault()
-    //console.log(event.target.dataset.sectionvalue)
-    let topicoId = event.target.dataset.sectionvalue;
-    //console.log('alterando topico')
-    this.topico.emit(topicoId);
+
+
+    console.log('alterando topico', topico)
+    this.topico.emit(topico);
   }
 }
