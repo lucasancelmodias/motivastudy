@@ -5,9 +5,24 @@ body {
   border-radius: 10px;
   box-shadow: -10px 10px 40px -20px #40389465;
   color: #6d6a8a;
-  height: 364px;
+  height: fit-content;
   margin-left: 3%;
   font-size: 18px;
+
+}
+
+a {
+  background: linear-gradient(to right, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+}
+
+a:hover {
+  background: linear-gradient(to left, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
 }
 
 h2 {

@@ -32,6 +32,10 @@ import { VideosComponent } from './pages/videos/videos.component';
 import { ApostilaComponent } from './pages/apostila/apostila.component';
 import { CronogramaComponent } from './pages/apostila/cronograma/cronograma.component';
 import { MetodosEstudoComponent } from './pages/apostila/metodos-estudo/metodos-estudo.component';
+import { CenterTextComponent } from './pages/apostila/center-text/center-text.component';
+import { CenterText2Component } from './pages/apostila/center-text2/center-text2.component';
+import { EnemComponent } from './pages/enem/enem.component';
+import { SisuComponent } from './pages/sisu/sisu.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { MetodosEstudoComponent } from './pages/apostila/metodos-estudo/metodos-
     SafePipe,
     ApostilaComponent,
     CronogramaComponent,
-    MetodosEstudoComponent
+    MetodosEstudoComponent,
+    CenterTextComponent,
+    CenterText2Component,
+    EnemComponent,
+    SisuComponent
   ],
   imports: [
     BrowserModule,
