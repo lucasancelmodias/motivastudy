@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// Importação dos componentes das páginas 
+// Importação dos componentes das páginas
 import { HomeComponent } from "./pages/home/home.component";
 import { CadastroComponent } from "./pages/cadastro/cadastro.component";
 import { LoginComponent } from "./pages/login/login.component";
@@ -15,13 +15,13 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "cadastroQuestoes", component: CadastroQuestoesComponent },
   { path: "questoes", component: QuestoesComponent },
-   { path: "perfil", component: PerfilComponent}
+  { path: "perfil", component: PerfilComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-  
-  
+
+
 export class AppRoutingModule { }

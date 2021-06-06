@@ -77,23 +77,56 @@ public class DataLoader implements ApplicationRunner{
 
     private void carregarDisciplina() {
         Questao questao = new Questao();
-        Disciplina disp = new Disciplina();
-        Disciplina disp2 = new Disciplina();
-        disp2.setNome("Geografia");
-        disp.setNome("Matemática");
-        disp = dispRepo.save(disp);
-        dispRepo.save(disp2);
-        Topico topico = new Topico();
-        topico.setDisciplina(disp);
-        topico.setNome("Geometria Analitica");
-        topico.setUrlPlaylist("urlTest");
-        topRepo.save(topico);
+        Disciplina matematica = new Disciplina();
+        Disciplina matematica2 = new Disciplina();
+        Disciplina geografia = new Disciplina();
+        Disciplina historia = new Disciplina();
+
+        geografia.setNome("Geografia");
+        matematica.setNome("Matemática");
+        matematica2.setNome("Matemática II");
+        historia.setNome("História");
+       
+        matematica = dispRepo.save(matematica);
+        dispRepo.save(geografia);
+        matematica2 = dispRepo.save(matematica2);
+        historia = dispRepo.save(historia);
+
+
+        Topico geometria = new Topico();
+        geometria.setDisciplina(matematica);
+        geometria.setNome("Geometria Analitica");
+        geometria.setUrlPlaylist("urlTest");
+        topRepo.save(geometria);
+
+        Topico trignometria = new Topico();
+        trignometria.setDisciplina(matematica2);
+        trignometria.setNome("Trigonometria");
+        topRepo.save(trignometria);
+        
+        Topico agricultura = new Topico();
+        agricultura.setDisciplina(geografia);
+        agricultura.setNome("Agricultura e meio ambiente");
+        agricultura.setUrlPlaylist("urlTest");
+        topRepo.save(agricultura);
+
+        Topico historiaGeral = new Topico();
+
+        historiaGeral.setDisciplina(historia);
+        historiaGeral.setNome("História Geral");
+        historiaGeral.setUrlPlaylist("urltest");
+        topRepo.save(historiaGeral);
+
         questao.setEnunciado("Enem 2099");
         questao.setPeso(99);
         questao.setAlternativaCorreta("A");
         questao.setTextoApoio("Te vira ai amigao");
         questao.setValorAlternativaA("é essa memo");
-        questao.setTopico(topico);
+        questao.setValorAlternativaB("talvez é essa");
+        questao.setValorAlternativaC("essa aqui talvez?");
+        questao.setValorAlternativaD("hummmmmmm");
+        questao.setValorAlternativaE("será????");
+        questao.setTopico(geometria);
         questaoRepo.save(questao);
     }
 

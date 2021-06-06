@@ -1,104 +1,20 @@
 <!--  Menu lateral -->
 <div class="wrapper">
   <!--  Matéria: Matemática 1  -->
-  <input id="matematica1" type="checkbox">
-  <label for="matematica1">
-    <p>Matemática I </p>
-    <div class="lil_arrow"></div>
-    <div class="content">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <!--  Matemática 1 - Tópico 1 - Matemática Básica -->
-          <a class="nav-link" data-toggle="tab" href="#M1T1">Matemática Básica</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 2 - Equação de 1° Grau e 2° Grau-->
-          <a class="nav-link" data-toggle="tab" href="#M1T2">Equação de 1° Grau e 2° Grau</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 3 - Porcentagem e Juros-->
-          <a class="nav-link" data-toggle="tab" href="#M1T3">Porcentagem e Juros</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 4 - Matemática - PA-->
-          <a class="nav-link" data-toggle="tab" href="#M1T4">Matemática - PA </a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 5 - Matemática - PG-->
-          <a class="nav-link" data-toggle="tab" href="#M1T5">Matemática - PG</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 6 - Inequação de 1° e 2° Grau -->
-          <a class="nav-link" data-toggle="tab" href="#M1T6">Inequação de 1° e 2° Grau</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 7 - Conjuntos Numéricos-->
-          <a class="nav-link" data-toggle="tab" href="#M1T7">Conjuntos Numéricos</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 8 - Análise Combinatória-->
-          <a class="nav-link" data-toggle="tab" href="#M1T8">Análise Combinatória</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 9 - Probabilidade e Estatística -->
-          <a class="nav-link" data-toggle="tab" href="#M1T9">Probabilidade e Estatística</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 10 - Análise de Gráficos e Tabelas-->
-          <a class="nav-link" data-toggle="tab" href="#M1T10">Análise de Gráficos e Tabelas</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 11 - Matrizes e Sistemas Lineares-->
-          <a class="nav-link" data-toggle="tab" href="#M1T11">Matrizes e Sistemas Lineares</a>
-        </li>
-        <li>
-          <!--  Matemática 1 - Tópico 12 - Logaritimo-->
-          <a class="nav-link" data-toggle="tab" href="#M1T12">Logaritimo</a>
-        </li>
-      </ul>
-    </div>
-    <span></span>
-  </label>
-  <!--  Matéria: Matemática 2  -->
-  <input id="matematica2" type="checkbox">
-  <label for="matematica2">
-    <p>Matemática II</p>
-    <div class="lil_arrow"></div>
-    <div class="content">
-      <ul class="nav nav-tabs">
-        <!--  Matemática 2 - Tópico 1 - Geometria Plana-->
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#M2T1">Geometria Plana</a>
-        </li>
-        <!--  Matemática 2 - Tópico 2 - Geometria Espacial-->
-        <li>
-          <a class="nav-link" data-toggle="tab" href="#M2T2">Geometria Espacial</a>
-        </li>
-        <!--  Matemática 2 - Tópico 3 - Trignometria-->
-        <li>
-          <a class="nav-link" data-toggle="tab" href="#M2T3">Trignometria</a>
-        </li>
-      </ul>
-    </div>
-    <span></span>
-  </label>
-  <!--  Matéria: História  -->
-  <input id="historia" type="checkbox">
-  <label for="historia">
-    <p>História</p>
-    <div class="lil_arrow"></div>
-    <div class="content">
-      <ul class="nav nav-tabs">
-        <!--  História - Tópico 1 - História Geral -->
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#HT1">História Geral</a>
-        </li>
-        <!--  História - Tópico 2 - História do Brasil -->
-        <li>
-          <a class="nav-link" data-toggle="tab" href="#HT2"> História do Brasil</a>
-        </li>
-      </ul>
-    </div>
-    <span></span>
-  </label>
+  <div *ngFor="let disciplina of disciplinas; index as i">
+    <input id="{{disciplina.nome}}{{i}}" type="checkbox">
+    <label for="{{disciplina.nome}}{{i}}">
+      <p>{{disciplina.nome}}</p>
+      <div class="lil_arrow"></div>
+      <div class="content">
+        <ul class="nav nav-tabs">
+          <li class="nav-item" *ngFor="let topico of disciplina.topicos">
+            <!--  Matemática 1 - Tópico 1 - Matemática Básica -->
+            <a class="nav-link" [attr.data-sectionvalue]="topico.id" (click)="alterarTopico($event)">{{topico.nome}}</a>
+          </li>
+        </ul>
+      </div>
+      <span></span>
+    </label>
+  </div>
 </div>
