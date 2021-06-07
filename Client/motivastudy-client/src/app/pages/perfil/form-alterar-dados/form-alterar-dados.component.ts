@@ -1,6 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, NgZone } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { CadastroService } from 'src/app/services/cadastro.service';
 
 @Component({
@@ -14,9 +14,20 @@ export class FormAlterarDadosComponent implements OnInit, OnDestroy {
   email:string;
   private subscription: Subscription
 
-  constructor(private cadastroServ: CadastroService) {  }
+  constructor(private cadastroServ: CadastroService,
+              private zone:NgZone,) {  }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe()
+  }
+
+  obj: any;
+
+  getUser(){
     this.subscription = this.cadastroServ.getUser()
     .subscribe(
       (response:any)=>{
@@ -24,10 +35,6 @@ export class FormAlterarDadosComponent implements OnInit, OnDestroy {
         this.email = response.email;
       }
     );
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
   }
 
   updateData(requisicaoForm:NgForm){
