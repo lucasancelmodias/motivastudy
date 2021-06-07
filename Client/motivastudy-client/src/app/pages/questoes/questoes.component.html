@@ -5,11 +5,11 @@
   <div class="row">
     <!-- Nav lateral -->
     <div class="col-sm-12 col-md-12 col-lg-2">
-      <app-sidebar></app-sidebar>
+      <app-sidebar (topico)="topicoChange($event)"></app-sidebar>
     </div>
     <!-- Questão do topico escolhido-->
-    <div class="col-sm-12 col-md-12 col-lg-9">
-      <app-questao></app-questao>
+    <div class="col-sm-12 col-md-12 col-lg-8 questao">
+      <app-questao [topico]="topicoAtual"></app-questao>
     </div>
   </div>
   <app-footer></app-footer>

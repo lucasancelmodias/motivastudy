@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.motivastudy.demo.dto.QuestaoResponse;
+import com.motivastudy.demo.dto.QuestaoUsuarioRespostaDto;
 import com.motivastudy.demo.models.Questao;
 import com.motivastudy.demo.models.Topico;
 import com.motivastudy.demo.service.QuestaoService;
@@ -54,5 +56,11 @@ public class QuestaoController {
         lsQuestao.forEach(ques -> questao.add(QuestaoResponse.buildQuestaoResponse(ques)));
 
         return new ResponseEntity<>(questao, HttpStatus.OK);
-    }    
+    }
+    
+    @PostMapping(value = "/responder", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> responderQuestao(@RequestBody QuestaoUsuarioRespostaDto questaoResposta) throws JsonProcessingException{
+        
+        return questaoService.responderQuestao(questaoResposta);
+    }
 }

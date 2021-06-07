@@ -12,4 +12,12 @@ cadastrarQuestao(questao:any){
   return this.http.post<any>(`${environment.url}/questoes/salvar`, questao);
 }
 
+buscarQuestao(topicoId:number){
+  return this.http.get<any>(`${environment.url}/questoes/topico/${topicoId}`)
+}
+
+responderQuestao(resposta){
+  return this.http.post<any>(`${environment.url}/questoes/responder`, resposta)
+}
+
 }
