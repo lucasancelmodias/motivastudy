@@ -1,4 +1,4 @@
-<form #cadastroForm="ngForm" (ngSubmit)="cadastrar(cadastroForm)">
+<form ngNativeValidate #cadastroForm="ngForm" (ngSubmit)="cadastrar(cadastroForm)">
   <div class="form-group">
     <!-- Voltar para a home -->
     <span>
@@ -20,6 +20,8 @@
       id="InputNome"
       placeholder="Seu nome"
       name="nome"
+      required
+      minlength="4"
       ngModel
     />
     <input
@@ -28,6 +30,7 @@
       id="InputEmail"
       placeholder="Seu e-mail"
       name="email"
+      required
       ngModel
     />
     <small class="form-text text-muted"
@@ -41,6 +44,8 @@
       id="InputPassword"
       placeholder="Sua senha"
       name="senha"
+      minlength="8"
+      required
       ngModel
     />
     <input
@@ -49,6 +54,8 @@
       id="InputPasswordConfirmation"
       placeholder="Confirme sua senha"
       name="senhaconfirmacao"
+      minlength="8"
+      required
       ngModel
     />
   </div>

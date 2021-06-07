@@ -1,6 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 @Component({
   selector: 'app-form-l',
@@ -9,18 +10,23 @@ import { AuthService } from '../../../services/auth.service';
 })
 export class FormLComponent implements OnInit {
 
-  constructor(private auth:AuthService) { }
+  constructor(
+    private auth:AuthService,
+    private route:Router) { }
 
   ngOnInit(): void {
   }
   onSubmit(loginForm:NgForm){
     console.log(loginForm.value);
     this.auth.login(loginForm.value.username,loginForm.value.password)
-    .subscribe(response => {
+    .subscribe(
+      (response:any) => {
       console.log('response', response)
-    },
-    error => {
-      console.log('error',error)
+      //Direciona page login
+      this.route.navigate(['questoes']);
+    },(error: HttpErrorResponse) => {
+      console.log('error Message',error.error.mensagem)
+      alert(error.error.mensagem);
     })
   }
 
