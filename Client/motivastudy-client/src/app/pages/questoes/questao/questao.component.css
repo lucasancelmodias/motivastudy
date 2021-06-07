@@ -1,5 +1,5 @@
 body {
-    padding: 20px;  
+    padding: 20px;
     font-family: "Nexa";
     padding: 4%;
     background: #fcfcfc;
@@ -116,4 +116,13 @@ h4 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 15px;
+}
+
+.correta {
+  background: green !important;
+}
+/* por algum motivo funciona, nao toca nessa porra */
+.errada {
+  background:red !important;
+  border: 1px blue !important;
 }

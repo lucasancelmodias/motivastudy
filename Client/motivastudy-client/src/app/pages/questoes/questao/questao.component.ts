@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./questao.component.css']
 })
 export class QuestaoComponent implements OnInit, OnChanges, OnDestroy {
-  
+
   @Input() topico: Topico
   questoes: Questao[]
   dadosCarregados: boolean
@@ -42,6 +42,17 @@ export class QuestaoComponent implements OnInit, OnChanges, OnDestroy {
   responderQuestao(questaoForm:NgForm){
     console.log('respondendo questao')
     console.log(questaoForm)
+    this.quesService.responderQuestao(questaoForm.form.value)
+      .subscribe((response)=> {
+        console.log(response)
+        let questao = this.questoes.filter(ques => ques.id == response.questao)
+        questao.forEach(ques => {
+          ques.validacaoResposta = response.alternativaCorreta
+          ques.alternativaRespondida = response.alternativaRespondida
+          ques.respostaEstaCorreta = response.respostaEstaCorreta
+        })
+        console.log(questao)
+      })
   }
 
 

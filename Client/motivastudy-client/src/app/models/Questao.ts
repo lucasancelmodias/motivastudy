@@ -10,4 +10,7 @@ export class Questao {
   valorAlternativaC:string;
   valorAlternativaD:string;
   valorAlternativaE:string;
+  validacaoResposta:string;
+  alternativaRespondida:string;
+  respostaEstaCorreta:boolean;
 }
