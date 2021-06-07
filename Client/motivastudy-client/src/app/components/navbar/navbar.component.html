@@ -29,6 +29,10 @@
       <li class="nav-item">
         <a class="nav-link" href="/sisu">Sisu</a>
       </li>
+      <!-- Sexto item da navbar  -->
+      <li class="nav-item" *ngIf="perfil != 'ALUNO'">
+        <a class="nav-link" href="/cadastroQuestoes">Cadastrar Questão</a>
+      </li>
     </ul>
     <!-- Sexto item da navbar  - parte direita -->
     <ul class="navbar-nav ml-auto">
