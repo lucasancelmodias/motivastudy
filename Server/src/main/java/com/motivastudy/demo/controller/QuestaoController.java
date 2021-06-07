@@ -9,6 +9,7 @@ import java.util.Optional;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.motivastudy.demo.dto.QuestaoResponse;
+import com.motivastudy.demo.dto.QuestaoUsuarioRespostaDto;
 import com.motivastudy.demo.models.Questao;
 import com.motivastudy.demo.models.Topico;
 import com.motivastudy.demo.service.QuestaoService;
@@ -57,9 +58,9 @@ public class QuestaoController {
         return new ResponseEntity<>(questao, HttpStatus.OK);
     }
     
-    @PostMapping("/responder")
-    public ResponseEntity<String> responderQuestao(@RequestBody String val) throws JsonProcessingException{
-        questaoService.responderQuestao(val);
-        return ResponseEntity.ok().body("ok");
+    @PostMapping(value = "/responder", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> responderQuestao(@RequestBody QuestaoUsuarioRespostaDto questaoResposta) throws JsonProcessingException{
+        
+        return questaoService.responderQuestao(questaoResposta);
     }
 }

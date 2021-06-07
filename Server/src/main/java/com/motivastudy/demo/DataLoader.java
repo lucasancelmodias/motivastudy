@@ -102,6 +102,7 @@ public class DataLoader implements ApplicationRunner{
         Topico trignometria = new Topico();
         trignometria.setDisciplina(matematica2);
         trignometria.setNome("Trigonometria");
+        trignometria.setUrlPlaylist("PLf1lowbdbFIDyVckJbycSHH4FVwdOc2Gd");
         topRepo.save(trignometria);
         
         Topico agricultura = new Topico();

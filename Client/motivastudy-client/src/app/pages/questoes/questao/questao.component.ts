@@ -2,13 +2,14 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@
 import { QuestaoService } from 'src/app/services/questao.service';
 import { Questao } from 'src/app/models/Questao';
 import { Topico } from 'src/app/models/Topico';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-questao',
   templateUrl: './questao.component.html',
   styleUrls: ['./questao.component.css']
 })
 export class QuestaoComponent implements OnInit, OnChanges, OnDestroy {
-
+  
   @Input() topico: Topico
   questoes: Questao[]
   dadosCarregados: boolean
@@ -36,6 +37,11 @@ export class QuestaoComponent implements OnInit, OnChanges, OnDestroy {
   }
   possuiQuestoes(): boolean{
     return this.questoes?.length > 0
+  }
+
+  responderQuestao(questaoForm:NgForm){
+    console.log('respondendo questao')
+    console.log(questaoForm)
   }
 
 
