@@ -13,11 +13,10 @@ constructor(
   private route:Router) { }
 
   cadastrarUsuario(form:any){
-    console.log('FORM >>> ' +form);
     this.http.post(`${environment.url}/cadastro`, form.value)
     .subscribe(
       (response:any) => {
-        alert(response.message); //Response com message do back
+        alert(response.message);
         //Direciona page login
         this.route.navigate(['login']);
     },(error: HttpErrorResponse) => {
@@ -73,13 +72,7 @@ constructor(
     } 
     if(erro == null || (form.value.senha != null && form.value.senhaconfirmacao != null)){
       console.log('Entrou no metodo da chamada');
-      this.http.post(`${environment.url}/usuario/update`, form.value)
-      .subscribe(
-        (response:any) =>{
-          alert("Dados Alterados com Sucesso!!");
-          window.location.reload();
-        }
-      )
+      return this.http.post(`${environment.url}/usuario/update`, form.value)
     } 
     if(boolean) alert(erro);
   }

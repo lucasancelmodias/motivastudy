@@ -31,7 +31,13 @@ export class FormAlterarDadosComponent implements OnInit, OnDestroy {
   }
 
   updateData(requisicaoForm:NgForm){
-    this.cadastroServ.updateUser(requisicaoForm);
+    this.cadastroServ.updateUser(requisicaoForm)
+    .subscribe(
+      (response:any) =>{
+        alert("Dados Alterados com Sucesso!! Entre novamente para notar as alterações.");
+        window.location.reload();
+      }
+    )
   }
 
 }
