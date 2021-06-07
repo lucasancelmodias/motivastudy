@@ -15,7 +15,7 @@ import { EnemComponent } from './pages/enem/enem.component';
 import { SisuComponent } from './pages/sisu/sisu.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
   { path: "cadastro", component: CadastroComponent },
   { path: "login", component: LoginComponent },
   { path: "cadastroQuestoes", component: CadastroQuestoesComponent },

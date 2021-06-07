@@ -1,4 +1,118 @@
-BODY {
-  background-color: rgb(255, 255, 255);
-  background-image: linear-gradient(to top left, #f7f4fd, rgb(253, 253, 253));
+/** ROW principal centralizada */
+.row {
+  margin-top: 5%;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+/** Pegando  a imagem de fundo */
+#grad {
+
+  background-image: url('src\assets\img\img2.jpg');
+}
+
+/** Colocando a font e posicionando */
+body {
+  font-family: 'NexaLight';
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/** Textos */
+h1 {
+  text-align: center;
+  background: linear-gradient(to right, #30CFD0 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+  text-align: left;
+  font-size: 35px;
+  padding-left: 15%;
+
+}
+
+
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  padding: 10px;
+}
+
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, #db40a5, #330867);
+}
+
+.responsive {
+  max-width: 85%;
+  height: auto;
+  text-align: left;
+}
+
+h4 {
+  font-family: 'Nexabold';
+  font-size: 120%;
+  color: #330867;
+  padding-left: 15%;
+  padding-top: 1%;
+
+}
+
+h5 {
+  font-family: 'Nexabold';
+  font-size: 110%;
+  color: #330867;
+  padding-left: 15%;
+  padding-top: 3%;
+}
+
+h6 {
+  font-family: 'Nexabold';
+  font-size: 120%;
+  color: #330867;
+  padding-top: 3%;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+/** botão do gradiente */
+.btn-grad {
+  border-radius: 50px;
+  font-size: 15px;
+  border: 0%;
+  border-style: none;
+  background-image: linear-gradient(to right, #330867 1%, #30CFD0 50%);
+  margin-top: 20px;
+  padding: 10px 75px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 25px;
+  padding-top: 3%;
+  background: linear-gradient(to right, #330867 5%, #30CFD0 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: NexaBold;
+  padding-left: 15%;
+}
+
+a:link {
+  text-decoration: none;
 }

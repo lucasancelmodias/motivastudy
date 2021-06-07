@@ -1,9 +1,82 @@
-<body>
-  <app-navbar></app-navbar>
-  <p>home works!</p>
+<body ID="grad">
+  <app-nav-superior></app-nav-superior>
+  <!-- Row central -->
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <h4 style="margin-top: 6%;">Bem-vindo ao</h4>
+      <h1>Seu ecossistema para aprender <br>de forma gratuita e<br> ir mais longe. </h1>
+      <h4>Embarque conosco nessa jornada para <br>se preparar para o ENEM, evoluir academicamente <br>de forma contínua
+        e
+        garantir sua vaga!</h4>
 
+      <h3 class="form-text text-muted">
+        Já começou a jornada? &nbsp;<a routerLink="/login"> Faça o login</a>
+      </h3>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <img src="/assets/img/conteudo/MotivaStudyLogo.png" class="responsive">
+      <br>
+      <h5>
+        <ul>
+          <li>Inicie sua jornada sem dúvidas de por onde começar!</li>
+          <li>Vídeo-aulas selecionadas gratuitas.</li>
+          <li>Questões do Enem por tópico para você testar seu conhecimento.</li>
+          <li>Cronograma de estudos.</li>
+          <li>Explicação de como funciona a nota do Enem.</li>
+          <li>Explicação sobre o Sisu.</li>
+          <li>Professores parceiros sempre atualizando com novas questões.</li>
+          <li> Apostilas gratuitas disponibilizas.</li>
+          <li> Simulados e provas do ENEM disponibilizos em um só lugar!</li>
+        </ul>
+      </h5>
+      <div class="d-flex justify-content-center">
+        <a routerLink="cadastro"><button class="btn-grad"> Venha conhecer! </button> </a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h6 class="card-title">Aulas organizadas na melhor ordem de aprendizado e tópico!
+            </h6>
+            <p class="card-text">Organizamos as matérias mais cobradas do enem pelo edital e sistematizamos para o seu
+              melhor estudo.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h6 class="card-title">Responda questões de fixação do próprio Enem!</h6>
+            <p class="card-text">Separamos as questões que se adequam perfeitamente para as aulas escolhidas para o
+              máximo aproveitamento.
+            </p>
+          </div>
+        </div>
 
-  <a routerLink="cadastro"> Cadastro</a> <br>
-  <a routerLink="login"> Login</a>
-
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6">
+      <div class="d-flex justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h6 class="card-title">Tenha acesso as Provas e Simulados do Enem com gabarito!</h6>
+            <p class="card-text">Centralizamos todo o conteúdo para você se preparar da melhor forma gratuitamente e
+              garantir a sua nota.
+            </p>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h6 class="card-title">Faça download de apostilas disponibilizadas gratuitamente!</h6>
+            <p class="card-text">Potencialize seus estudos sempre que puder com apostilas gratuitas de grandes cursinhos
+              solidários.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
 </body>

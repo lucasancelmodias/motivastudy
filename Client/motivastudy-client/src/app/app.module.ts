@@ -36,6 +36,7 @@ import { CenterTextComponent } from './pages/apostila/center-text/center-text.co
 import { CenterText2Component } from './pages/apostila/center-text2/center-text2.component';
 import { EnemComponent } from './pages/enem/enem.component';
 import { SisuComponent } from './pages/sisu/sisu.component';
+import { NavSuperiorComponent } from './pages/home/nav-superior/nav-superior.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { SisuComponent } from './pages/sisu/sisu.component';
     CenterTextComponent,
     CenterText2Component,
     EnemComponent,
-    SisuComponent
+    SisuComponent,
+    NavSuperiorComponent
   ],
   imports: [
     BrowserModule,

@@ -74,13 +74,8 @@ h2 {
 /** texto do link em gradiente*/
 h3 {
   font-size: large;
-  padding-top: 5%;
   background: linear-gradient(to right, #330867 5%, #30CFD0 85%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: NexaBold;
-}
-
-small {
-  margin-left: 12px;
 }

@@ -19,3 +19,27 @@ body {
   background-attachment: fixed;
   position: absolute;
 }
+
+.responsive {
+  max-width: 85%;
+  height: auto;
+  text-align: left;
+  padding-top: 8%;
+}
+
+h4 {
+  font-family: 'Nexabold';
+  font-size: 180%;
+  color: #30CFD0;
+  padding-left: 6%;
+  padding-top: 3%;
+  text-align: left;
+}
+
+h5 {
+  font-family: 'Nexabold';
+  font-size: 130%;
+  color: #330867;
+  padding-left: 6%;
+  text-align: left;
+}
