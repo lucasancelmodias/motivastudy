@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Topico } from 'src/app/models/Topico';
 import { QuestaoService } from 'src/app/services/questao.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form-q',
   templateUrl: './form-q.component.html',
@@ -16,7 +17,9 @@ export class FormQComponent implements OnInit {
   topicos: Topico[]
   disciplinaId: string
   topicoId: string
-  constructor(private dispService:DisciplinaService, private questService: QuestaoService) { }
+  constructor(private dispService:DisciplinaService, 
+              private questService: QuestaoService,
+              private route:Router) { }
 
   ngOnInit(): void {
     this.dispService.getDisciplinas().subscribe((response) => {
@@ -33,10 +36,12 @@ export class FormQComponent implements OnInit {
     this.questService.cadastrarQuestao(questaoForm.form.value)
     .subscribe(
       (response:any) => {
-      alert(response.message);
+        let message = 'Questão criada com sucesso'; 
+        alert(message);
+        this.route.navigate(['videos']);
       },(error: HttpErrorResponse) => {
-        console.error(error.error);
-        alert(error.error.message);
+        let message = 'Houve um erro ao cadastrar a questão, favor contatar um Administrador';
+        alert(message);
       }
       );
   }

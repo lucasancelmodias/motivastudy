@@ -1,16 +1,16 @@
-<form #questaoForm="ngForm" (ngSubmit)="salvarQuestao(questaoForm)">
+<form ngNativeValidate #questaoForm="ngForm" (ngSubmit)="salvarQuestao(questaoForm)">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-6 div-left">
       <div class="form-group">
         <!-- SELECT  MATÉRIA  -->
         <h3 class="text-white">Matéria</h3>
-        <select class="form-control inputQ" id="selectMateria" name="materia" (change)="changeDisciplina($event.target)" ngModel>
+        <select class="form-control inputQ" id="selectMateria" name="materia" required (change)="changeDisciplina($event.target)" ngModel>
           <option value="" selected disabled hidden>Selecione</option>
           <option *ngFor="let disciplina of disciplinas" value="{{disciplina.id}}" >{{ disciplina.nome }} </option>
         </select>
         <!-- SELECT  Tópico  -->
         <h3 class="text-white">Tópico</h3>
-        <select class="form-control inputQ" id="TopicoMatematica1" name="topicoId" ngModel>
+        <select class="form-control inputQ" id="TopicoMatematica1" name="topicoId" required ngModel>
           <option value="" selected disabled hidden>Selecione</option>
           <option *ngFor="let topico of topicos" value="{{topico.id}}">{{ topico.nome }}</option>
         </select>
