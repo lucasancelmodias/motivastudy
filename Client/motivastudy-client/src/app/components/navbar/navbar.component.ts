@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/services/cadastro.service';
-
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  
+
   nome:string
   perfil: string;
-  
-  constructor(private cadastroServ: CadastroService) {  }
+
+  constructor(private cadastroServ: CadastroService, private authService: AuthService, private route: Router) {  }
 
   ngOnInit(): void {
     this.getUser();
@@ -30,5 +31,12 @@ export class NavbarComponent {
         }
       }
     );
+  }
+
+  logout(){
+    this.authService.logout().subscribe((resp)=>{
+      console.log(resp);
+      this.route.navigate(['/'])
+    })
   }
 }

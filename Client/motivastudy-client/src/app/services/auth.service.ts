@@ -27,4 +27,8 @@ constructor(
     return this.http.post<any>(`${environment.url}/dologin`, body.toString(), this.httpOptions)
   }
 
+  logout(){
+    return this.http.post<any>(`${environment.url}/logout`, {})
+  }
+
 }
