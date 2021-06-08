@@ -7,6 +7,14 @@ h4 {
   padding-bottom: 4%;
 }
 
+h3 {
+  font-family: 'Nexabold';
+  font-size: 160%;
+  color: #30CFD0;
+  padding-top: 2%;
+  text-align: center;
+}
+
 h5 {
   font-family: 'Nexabold';
   font-size: 130%;
@@ -23,4 +31,18 @@ b {
 body {
   background: #fcfcfc;
   padding: 7%;
+}
+
+a {
+  background: linear-gradient(to right, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+}
+
+a:hover {
+  background: linear-gradient(to left, #330867 30%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
 }
