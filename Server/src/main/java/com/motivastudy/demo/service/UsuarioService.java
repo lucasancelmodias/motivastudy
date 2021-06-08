@@ -39,6 +39,10 @@ public class UsuarioService {
         this.requisicaoProfessorRepository = requisicaoProfessorRepository;
     }
 
+	public Optional<Usuario> findUserByResetToken(String resetToken) {
+		return usuarioRepo.findByToken(resetToken);
+	}
+
     public Optional<Usuario> findByNome(Usuario usuario){
         return usuarioRepo.findUsuarioByNome(usuario.getNome());
     }
