@@ -6,52 +6,46 @@
         <app-progresso></app-progresso>
       </div>
       <!-- Template Questão -->
-      <div id="M1T1" class="tab-pane fade">
+      <div id="M1T1" *ngIf="possuiQuestoes(); else elseQuestoes">
         <!-- Título -->
-        <h3>Matemática Básica</h3>
-        <div class="form-group">
+        <h3>{{topico.nome}}</h3>
+        <form #questaoForm="ngForm" (submit)="questaoForm.form.valid && responderQuestao(questaoForm )" *ngFor="let questao of questoes; index as i" >
+        <div class="form-group" >
           <!-- Número da questão -->
-          <h4> Questão [1] </h4>
-          <!-- enunciado -->
-          <p class="enunciado"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium, totam rem
-            aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam.</p>
-          <!-- textoApoi -->
-          <p class="textoApoio"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-            doloremque
-            laudantium, totam rem
-            aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-            totam rem aperiam. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-            laudantium, totam rem aperiam.</p>
-          <!-- Alternativas-->
-          <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div class="alternativas">
-              <!-- Alternativa - A-->
-              <input class="radio-btn" name="radio-collection" id="radio-1" type="radio">
-              <label class="radio-label" for="radio-1"> <span>Alternativa A <br> Sed ut perspiciatis unde omnis iste
-                  natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span></label>
-              <!-- Alternativa - B-->
-              <input class="radio-btn" name="radio-collection" id="radio-2" type="radio">
-              <label class="radio-label" for="radio-2"> <span>Alternativa B <br> Sed ut perspiciatis unde omnis iste
-                  natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span></label>
-              <!-- Alternativa - C-->
-              <input class="radio-btn" name="radio-collection" id="radio-3" type="radio">
-              <label class="radio-label" for="radio-3"> <span>Alternativa C <br> Sed ut perspiciatis unde omnis iste
-                  natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span></label>
-              <!-- Alternativa - D-->
-              <input class="radio-btn" name="radio-collection" id="radio-4" type="radio">
-              <label class="radio-label" for="radio-4"> <span>Alternativa D <br> Sed ut perspiciatis unde omnis iste
-                  natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span></label>
-              <!-- Alternativa - E-->
-              <input class="radio-btn" name="radio-collection" id="radio-5" type="radio">
-              <label class="radio-label" for="radio-5"> <span>Alternativa E <br> Sed ut perspiciatis unde omnis iste
-                  natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</span></label>
+
+            <h4> Questão {{1 + i}} </h4>
+            <!-- textoApoi -->
+            <p class="textoApoio"> {{questao.textoApoio}}</p>
+            <!-- enunciado -->
+            <p class="enunciado"> {{questao.enunciado}}</p>
+            <!-- Alternativas-->
+            <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div class="alternativas">
+                <!-- Alternativa - A-->
+                <input type="number" style="display: none;" name="idQuestao" [ngModel]="questao.id">
+                <input class="radio-btn" required name="alternativaRespondida" id="{{questao.id}}-1" type="radio" value="A" ngModel>
+                <label class="radio-label" [ngClass]="!questaoForm.submitted ?  '' : (questao.alternativaCorreta == 'A' ? 'correta' :(questao.alternativaRespondida == 'A' ? 'errada' : '') )" for="{{questao.id}}-1" > <span>Alternativa A <br> {{questao.valorAlternativaA}}</span></label>
+                <!-- Alternativa - B-->
+                <input class="radio-btn" required name="alternativaRespondida" id="{{questao.id}}-2" type="radio" value="B" ngModel>
+                <label class="radio-label" [ngClass]="!questaoForm.submitted ?  '' : (questao.alternativaCorreta == 'B' ? 'correta' :(questao.alternativaRespondida == 'B' ? 'errada' : '') )" for="{{questao.id}}-2" > <span>Alternativa B <br> {{questao.valorAlternativaB}}</span></label>
+                <!-- Alternativa - C-->
+                <input class="radio-btn" required name="alternativaRespondida" id="{{questao.id}}-3" type="radio" value="C" ngModel>
+                <label class="radio-label" [ngClass]="!questaoForm.submitted ?  '' : (questao.alternativaCorreta == 'C' ? 'correta' :(questao.alternativaRespondida == 'C' ? 'errada' : '') )" for="{{questao.id}}-3"> <span>Alternativa C <br> {{questao.valorAlternativaC}}</span></label>
+                <!-- Alternativa - D-->
+                <input class="radio-btn" required name="alternativaRespondida" id="{{questao.id}}-4" type="radio" value="D" ngModel>
+                <label class="radio-label" [ngClass]="!questaoForm.submitted ?  '' : (questao.alternativaCorreta == 'D' ? 'correta' :(questao.alternativaRespondida == 'D' ? 'errada' : '') )" for="{{questao.id}}-4"> <span>Alternativa D <br> {{questao.valorAlternativaD}}</span></label>
+                <!-- Alternativa - E-->
+              <input class="radio-btn" required name="alternativaRespondida" id="{{questao.id}}-5" type="radio" value="E" ngModel>
+              <label class="radio-label" [ngClass]="!questaoForm.submitted ?  '' : (questao.alternativaCorreta == 'E' ? 'correta' :(questao.alternativaRespondida == 'E' ? 'errada' : '') )" for="{{questao.id}}-5"> <span>Alternativa E <br> {{questao.valorAlternativaE}}</span></label>
             </div>
           </div>
           <!-- Botão para responder-->
-          <div class="d-flex justify-content-center"><button type="submitQuestao"
-              class="btn btn-primary btn-grad">Responder</button>
+          <div class="d-flex justify-content-center">
+            <button type="submit"
+            class="btn btn-primary btn-grad" [disabled]="!questaoForm.form.valid">Responder</button>
           </div>
         </div>
+      </form>
       </div>
+      <ng-template #elseQuestoes><p *ngIf="dadosCarregados">Não há questões para o Tópico selecionado.</p></ng-template>
+
