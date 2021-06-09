@@ -15,7 +15,7 @@ import { EnemComponent } from './pages/enem/enem.component';
 import { SisuComponent } from './pages/sisu/sisu.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent},
   { path: "cadastro", component: CadastroComponent },
   { path: "login", component: LoginComponent },
   { path: "cadastroQuestoes", component: CadastroQuestoesComponent },
@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: "videos", component: AulasComponent },
   { path: "apostila", component: ApostilaComponent },
   { path: "enem", component: EnemComponent },
-   { path: "sisu", component: SisuComponent }
+  { path: "sisu", component: SisuComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

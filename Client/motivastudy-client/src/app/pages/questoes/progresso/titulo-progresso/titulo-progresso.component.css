@@ -11,7 +11,6 @@ html {
 
 .container {
   width: 100%;
-  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,7 +34,7 @@ html {
 .container .box .title .block {
   width: 0%;
   height: inherit;
-  background: #30CFD0;
+  background: #db40a5;
   position: absolute;
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
@@ -44,7 +43,7 @@ html {
 .container .box .title h1 {
   font-family: 'MontserratBold';
   color: #330867;
-  font-size: 35px;
+  font-size: 33px;
   -webkit-animation: mainFadeIn 0.5s forwards;
   -o-animation: mainFadeIn 0.5s forwards;
   animation: mainFadeIn 0.5s forwards;
@@ -61,14 +60,13 @@ html {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
-  background: #30CFD0;
-  -webkit-animation: load 0.6s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation-delay: 2s;
+  background: #db40a5;
+  -webkit-animation: load 0.5 cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation: popIn 0.5 cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+  animation-delay: 0.5s;
   margin-left: 5px;
   margin-top: -10px;
   position: absolute;
-  bottom: 13px;
   right: -12px;
 }
 
@@ -87,22 +85,12 @@ html {
   background: #330867;
   position: absolute;
   animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5;
   display: flex;
 }
 
-.container .box .role p {
-  animation: secFadeIn 1s forwards;
-  animation-delay: 1.2s;
-  opacity: 0;
-  font-family: "MontserratBold";
-  background: linear-gradient(to right, #330867 30%, #30CFD0 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 30px;
-  padding-top: 30px;
 
-}
+
 
 @keyframes mainBlock {
   0% {
@@ -148,44 +136,6 @@ html {
   }
 }
 
-@keyframes popIn {
-  0% {
-    width: 0px;
-    height: 0px;
-    background: #30CFD0;
-    border: 0px solid #ddd;
-    opacity: 0;
-  }
-
-  50% {
-    width: 10px;
-    height: 10px;
-    background: #30CFD0;
-    opacity: 1;
-    bottom: 45px;
-  }
-
-  65% {
-    width: 7px;
-    height: 7px;
-    bottom: 0px;
-    width: 15px;
-  }
-
-  80% {
-    width: 10px;
-    height: 10px;
-    bottom: 20px;
-  }
-
-  100% {
-    width: 7px;
-    height: 7px;
-    background: #30CFD0;
-    border: 0px solid #222;
-    bottom: 13px;
-  }
-}
 
 @keyframes secFadeIn {
   0% {

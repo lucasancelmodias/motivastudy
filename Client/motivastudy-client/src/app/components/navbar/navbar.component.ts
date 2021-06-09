@@ -11,31 +11,31 @@ export class NavbarComponent {
 
   nome:string
   perfil: string;
+  usuario:any
 
   constructor(private cadastroServ: CadastroService, private authService: AuthService, private route: Router) {  }
 
   ngOnInit(): void {
     this.getUser();
+    this.authService.usuarioAtual.subscribe((resp)=> {
+      this.usuario = resp
+    })
+
   }
 
   getUser(){
-    this.cadastroServ.getUser()
-    .subscribe(
-      (response:any)=>{
-        this.nome = response.nome;
-        for(var i=0; i< response.perfis.length;i++){
-          if(response.perfis[i].nome == 'ALUNO'){
-            this.perfil = response.perfis[i].nome;
-            console.log('this.perfil: ' +this.perfil);
-          }
-        }
-      }
-    );
+    this.authService.usuarioAtual
+      .subscribe((usuario)=>{
+        this.nome = usuario.nome
+        var perfilArr = usuario.perfis.filter(perfil => perfil == "ALUNO")
+        this.perfil = perfilArr?.[0]
+      })
   }
 
   logout(){
+    localStorage.removeItem('usuario')
     this.authService.logout().subscribe((resp)=>{
-      console.log(resp);
+
       this.route.navigate(['/'])
     })
   }

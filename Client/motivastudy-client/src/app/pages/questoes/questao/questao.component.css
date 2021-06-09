@@ -1,20 +1,21 @@
 body {
-    padding: 20px;
-    font-family: "Nexa";
-    padding: 4%;
-    background: #fcfcfc;
-    border-radius: 5px;
-    box-shadow: 10px 10px 50px -30px #282269;
-    color:#6d6a8a;
-    margin-left: 2%;
+  padding: 20px;
+  font-family: "Nexa";
+  padding: 4%;
+  background: #fcfcfc;
+  border-radius: 5px;
+  box-shadow: 10px 10px 50px -30px #282269;
+  color: #6d6a8a;
+  margin-left: 2%;
 }
+
 .container,
 .tab-content,
 .tab-pane {
-    background-color: #fcfcfc;
+  background-color: #fcfcfc;
 }
 
-h3{
+h3 {
   color: #330867;
   font-family: 'MontserratBold';
   font-size: 30px;
@@ -27,10 +28,12 @@ h4 {
   font-size: 20px;
   padding-bottom: 2%;
 }
-.enunciado{
-    color:rgb(94, 94, 94);
-    margin-bottom: 20px;
+
+.enunciado {
+  color: rgb(94, 94, 94);
+  margin-bottom: 20px;
 }
+
 .alternativas {
   margin-top: 3%;
 }
@@ -119,10 +122,11 @@ h4 {
 }
 
 .correta {
-  background: green !important;
+  background: #8CBEBF !important;
 }
+
 /* por algum motivo funciona, nao toca nessa porra */
 .errada {
-  background:red !important;
-  border: 1px blue !important;
+  background: #D482A3 !important;
+  border: 1px #591728 !important;
 }

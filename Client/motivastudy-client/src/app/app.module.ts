@@ -36,6 +36,9 @@ import { CenterTextComponent } from './pages/apostila/center-text/center-text.co
 import { CenterText2Component } from './pages/apostila/center-text2/center-text2.component';
 import { EnemComponent } from './pages/enem/enem.component';
 import { SisuComponent } from './pages/sisu/sisu.component';
+import { NavSuperiorComponent } from './pages/home/nav-superior/nav-superior.component';
+import { TituloProgressoComponent } from './pages/questoes/progresso/titulo-progresso/titulo-progresso.component';
+import { TituloHomeComponent } from './pages/aulas/home-aulas/titulo-home/titulo-home.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import { SisuComponent } from './pages/sisu/sisu.component';
     CenterTextComponent,
     CenterText2Component,
     EnemComponent,
-    SisuComponent
+    SisuComponent,
+    NavSuperiorComponent,
+    TituloProgressoComponent,
+    TituloHomeComponent
   ],
   imports: [
     BrowserModule,

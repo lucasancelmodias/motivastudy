@@ -1,0 +1,43 @@
+/** Fonte da navbar */
+.navbar {
+  font-family: "NexaBold";
+  border-radius: 15px;
+  background-image: linear-gradient(15deg, #fcfcfc 0%, #fcfcfc 100%);
+  box-shadow: 10px 5px 10px -8px #282269;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom,
+      #574fb6,
+      #30CFD0) 5% 80%;
+}
+
+/** Padding do perfil*/
+.ml-auto {
+  padding-right: 4%;
+}
+
+/** Mudando a posição do icon EXIT - PERFIL*/
+.IconPosition {
+  padding-top: 2%;
+  padding-right: 2%;
+}
+
+/** Espaçando as opções do Menu*/
+.nav-item {
+  margin-left: 28px;
+}
+
+/** ,Mudando a cor das opções do Menu*/
+a {
+  background: linear-gradient(to right, #484666 0%, #484666 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/** Mudando a cor das opções do Menu quando o mouse está passando*/
+a:hover {
+  background: linear-gradient(to right, #330867 25%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 3px 10px #30d0d01f;
+}

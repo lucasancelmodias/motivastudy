@@ -1,14 +1,9 @@
-
 /** design do formulario */
 form {
   background-color: #fcfcfc;
   padding: 8%;
   border-radius: 5px;
-  position:initial;
-  top:0;
-  left:0;
-  right: 0;
-  
+  box-shadow: -10px 10px 20px -5px #574fb6;
 }
 
 /** posição dos campos */
@@ -33,6 +28,7 @@ form {
   color: white;
   box-shadow: 0 0 20px #eee;
   display: block;
+  padding-top: 3%;
 }
 
 .btn-grad:hover {
