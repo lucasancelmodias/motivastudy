@@ -27,8 +27,15 @@ export class NavbarComponent {
     this.authService.usuarioAtual
       .subscribe((usuario)=>{
         this.nome = usuario.nome
-        var perfilArr = usuario.perfis.filter(perfil => perfil == "ALUNO")
-        this.perfil = perfilArr?.[0]
+        //var perfilArr = usuario.perfis.filter(perfil => perfil.nome == "ADMIN" || perfil.nome == 'PROFESSOR')
+        for(let i=0; i<usuario.perfis.length;i++){
+          if(usuario.perfis[i].nome == "ADMIN" || usuario.perfis[i].nome == 'PROFESSOR' ){
+            this.perfil = usuario.perfis[i].nome;
+          } else {
+            this.perfil = 'ALUNO';
+          }
+        }
+        //this.perfil = perfilArr?.[0]
       })
   }
 
