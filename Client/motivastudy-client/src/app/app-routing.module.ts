@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: "videos", component: AulasComponent },
   { path: "apostila", component: ApostilaComponent },
   { path: "enem", component: EnemComponent },
-   { path: "sisu", component: SisuComponent }
+  { path: "sisu", component: SisuComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -3,7 +3,7 @@
     <div class="tab-content">
       <!-- Home que some quando seleciona o tópico -->
       <div id="home" class="tab-pane fade in active show">
-        <app-progresso></app-progresso>
+        <app-progresso *ngIf="!dadosCarregados"></app-progresso>
       </div>
       <!-- Template Questão -->
       <div id="M1T1" *ngIf="possuiQuestoes(); else elseQuestoes">

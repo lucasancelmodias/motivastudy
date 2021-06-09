@@ -16,6 +16,7 @@ export class VideoAulaComponent implements OnInit, OnChanges {
   tamanhoPlaylist: number;
   contador: number;
   public unsubscribe$: Subject<any> = new Subject();
+  dadosCarregados: boolean
 
   constructor(public spinner: NgxSpinnerService, public youTubeService: YoutubeService) { }
   ngOnChanges(changes: SimpleChanges): void {
@@ -27,7 +28,7 @@ export class VideoAulaComponent implements OnInit, OnChanges {
       .subscribe((response) => {
         this.videos = response['items']
         this.tamanhoPlaylist = this.videos.length
-
+        this.dadosCarregados = true
       })
   }
 

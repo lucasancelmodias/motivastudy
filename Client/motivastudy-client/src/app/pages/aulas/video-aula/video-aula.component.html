@@ -3,7 +3,7 @@
     <div class="tab-content">
       <!-- Home que some quando seleciona o tópico -->
       <div id="home" class="tab-pane fade in active show">
-        <app-home-aulas> </app-home-aulas>
+        <app-home-aulas *ngIf="!dadosCarregados"> </app-home-aulas>
       </div>
       <!-- Template Aulas -->
       <div id="VM1T1" *ngIf="videos">
