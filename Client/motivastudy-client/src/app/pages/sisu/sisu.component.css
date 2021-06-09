@@ -90,6 +90,7 @@ h2 {
   overflow-y: scroll;
   font-family: "NexaLight";
   color: rgba(39, 48, 58, 0.897);
+  overflow: hidden;
 }
 
 /* painel principal fora */
