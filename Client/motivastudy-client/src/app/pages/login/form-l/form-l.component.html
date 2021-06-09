@@ -6,12 +6,15 @@
     <!-- Título -->
     <h2> Faça seu <span id="text">login</span></h2>
     <!-- Campo do email-->
-    <input type="email" class="form-control" required minlength="4" id="InputEmail" placeholder="Seu e-mail cadastrado" name="username" ngModel>
+    <input type="email" class="form-control" required minlength="4" id="InputEmail" placeholder="Seu e-mail cadastrado"
+      name="username" ngModel>
     <!-- Campo da senha-->
-    <input type="password" class="form-control" required minlength="8" id="InputPassword" placeholder="Sua senha" name="password" ngModel>
+    <input type="password" class="form-control" required minlength="8" id="InputPassword" placeholder="Sua senha"
+      name="password" ngModel>
   </div>
   <!-- Esqueceu a senha link-->
-  <small class="form-text text-muted d-flex justify-content-center">Esqueci minha senha</small>
+  <small class="form-text text-muted d-flex justify-content-center"><a routerLink="/recuperarSenha">Esqueci minha
+      senha</a></small>
   <!-- Check para lembrar o user-->
   <div class="d-flex justify-content-center">
     <span class="checkbox-el">
@@ -21,7 +24,7 @@
     <label class="form-check-label " for="checkLembrarUsuario"> Lembrar usuário</label>
   </div>
   <!-- Botão login-->
-  <div class="d-flex justify-content-center"><button type="submitLogin" class="btn btn-primary btn-grad" >Login</button>
+  <div class="d-flex justify-content-center"><button type="submitLogin" class="btn btn-primary btn-grad">Login</button>
   </div>
   <!-- Link cadastro-->
   <h3 class="form-text text-muted d-flex justify-content-center">Não tem conta? &nbsp;<a routerLink="/cadastro">

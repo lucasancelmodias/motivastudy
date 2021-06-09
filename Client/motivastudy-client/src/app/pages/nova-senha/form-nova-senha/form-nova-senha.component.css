@@ -59,7 +59,7 @@ form {
 /** Texto sem gradiente */
 h2 {
   text-align: center;
-  padding-bottom: 6%;
+  padding-bottom: 3%;
   color: #330867;
   font-family: 'MontserratBold';
   font-size: 35px;
@@ -125,6 +125,7 @@ h2 {
 
 small {
   padding-bottom: 5%;
+  font-size: 16px;
 }
 
 h3 {

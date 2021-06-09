@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+    <!-- Voltar para a  -->
+    <a routerLink="/login"> <button type="button" class="btn btn-outline-primary btn-back" data-mdb-ripple-color="dark">
+        &#8249; </button> </a>
+    <!-- Título -->
+    <h2> Trocar a <span id="text">senha</span></h2>
+    <!-- Esqueceu a senha link-->
+    <small class="form-text text-muted d-flex justify-content-center">Nos informe sua nova senha</small>
+
+    <input type="password" class="form-control" required minlength="8" id="InputPassword" placeholder="Nova senha"
+      name="password" ngModel>
+    <input type="password" class="form-control" required minlength="8" id="InputPassword"
+      placeholder="Confirme a nova senha" name="password" ngModel>
+  </div>
+
+
+  <!-- Botão login-->
+  <div class="d-flex justify-content-center"><button type="submitSenha" class="btn btn-primary btn-grad">Salvar nova
+      senha</button>
+  </div>
+
+</form>

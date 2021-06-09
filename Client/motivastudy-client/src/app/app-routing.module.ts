@@ -13,6 +13,8 @@ import { AulasComponent } from './pages/aulas/aulas.component';
 import { ApostilaComponent } from './pages/apostila/apostila.component';
 import { EnemComponent } from './pages/enem/enem.component';
 import { SisuComponent } from './pages/sisu/sisu.component';
+import { RecuperacaoSenhaComponent } from './pages/recuperacao-senha/recuperacao-senha.component';
+import {NovaSenhaComponent} from './pages/nova-senha/nova-senha.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: "apostila", component: ApostilaComponent },
   { path: "enem", component: EnemComponent },
   { path: "sisu", component: SisuComponent },
+  { path: "recuperarSenha", component: RecuperacaoSenhaComponent },
+  { path: "novaSenha", component: NovaSenhaComponent },
   { path: '**', redirectTo: '' }
 ];
 

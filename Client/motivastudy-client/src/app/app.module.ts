@@ -39,6 +39,10 @@ import { SisuComponent } from './pages/sisu/sisu.component';
 import { NavSuperiorComponent } from './pages/home/nav-superior/nav-superior.component';
 import { TituloProgressoComponent } from './pages/questoes/progresso/titulo-progresso/titulo-progresso.component';
 import { TituloHomeComponent } from './pages/aulas/home-aulas/titulo-home/titulo-home.component';
+import { RecuperacaoSenhaComponent } from './pages/recuperacao-senha/recuperacao-senha.component';
+import { FormSenhaComponent } from './pages/recuperacao-senha/form-senha/form-senha.component';
+import { NovaSenhaComponent } from './pages/nova-senha/nova-senha.component';
+import { FormNovaSenhaComponent } from './pages/nova-senha/form-nova-senha/form-nova-senha.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +78,11 @@ import { TituloHomeComponent } from './pages/aulas/home-aulas/titulo-home/titulo
     SisuComponent,
     NavSuperiorComponent,
     TituloProgressoComponent,
-    TituloHomeComponent
+    TituloHomeComponent,
+    RecuperacaoSenhaComponent,
+    FormSenhaComponent,
+    NovaSenhaComponent,
+    FormNovaSenhaComponent
   ],
   imports: [
     BrowserModule,
