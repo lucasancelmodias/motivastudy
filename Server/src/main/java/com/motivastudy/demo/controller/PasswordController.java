@@ -34,7 +34,7 @@ public class PasswordController {
 	private EmailRepository emailService;
 
 	@Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordForResetEncoder(){
         return new BCryptPasswordEncoder();
     }
 	
@@ -112,7 +112,7 @@ public class PasswordController {
 			Usuario resetUser = user.get(); 
             
 			// Set new password    
-            resetUser.setSenha(passwordEncoder().encode(requestParams.get("password")));
+            resetUser.setSenha(passwordForResetEncoder().encode(requestParams.get("password")));
             
 			// Set the reset token to null so it cannot be used again
 			resetUser.setToken(null);

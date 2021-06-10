@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service("emailService")
 public class EmailServiceImpl implements EmailRepository {
 
-	@Autowired
+	
 	private JavaMailSender mailSender;
 
 	@Async

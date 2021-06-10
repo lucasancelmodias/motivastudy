@@ -53,7 +53,7 @@ public class DataLoader implements ApplicationRunner{
     public void run(ApplicationArguments args) throws Exception {
         carregarPerfil();
         carregarUsuario();
-        carregarDisciplina();
+        //carregarDisciplina();
         
     }
 
@@ -133,25 +133,53 @@ public class DataLoader implements ApplicationRunner{
 
     private void carregarUsuario() {
         Usuario user = new Usuario(); 
-
-        Optional<Usuario> usuarioExiste = usuarioRepo.findUsuarioByEmail("email@gmail.com");
-
-        if(usuarioExiste.isPresent()){
+        Usuario professor = new Usuario();
+        Usuario aluno = new Usuario();
+        Optional<Usuario> usuarioExiste = usuarioRepo.findUsuarioByEmail("admin@email.com");
+        Optional<Usuario> usuarioProfessorExiste = usuarioRepo.findUsuarioByEmail("professor@email.com");
+        Optional<Usuario> usuarioAlunoExiste = usuarioRepo.findUsuarioByEmail("aluno@email.com");
+        if(usuarioExiste.isPresent() || usuarioProfessorExiste.isPresent() || usuarioAlunoExiste.isPresent()){
             return;
         }
+        
         Optional<Perfil> oPerfil = perfilrepo.findPerfilByNome(Perfil.ADMIN);
+        Optional<Perfil> oPerfilProfessor = perfilrepo.findPerfilByNome(Perfil.PROFESSOR);
+        Optional<Perfil> oPerfilAluno = perfilrepo.findPerfilByNome(Perfil.ALUNO);
+
         Set<Perfil> perfis = new HashSet<>();
-        if(oPerfil.isPresent()){
+        Set<Perfil> perfisProfessor = new HashSet<>();
+        Set<Perfil> perfisAluno = new HashSet<>();
+
+        if(oPerfil.isPresent() || oPerfilProfessor.isPresent() || oPerfilAluno.isPresent()){
             perfis.add(oPerfil.get());
+            perfisProfessor.add(oPerfilProfessor.get());
+            perfisAluno.add(oPerfilAluno.get());
         }
         
-        user.setNome("Usuario");
+        user.setNome("Usuário Admin");
         user.setSenha(passwordEncoding().encode("senha1234"));
-        user.setEmail("email@gmail.com");
+        user.setEmail("admin@email.com");
         user.setAtivo(true);
         user.setPerfis(perfis);
         user.setDataAtivo(new Date());
         usuarioRepo.save(user);
+
+        professor.setNome("Usuário Professor");
+        professor.setSenha(passwordEncoding().encode("senha1234"));
+        professor.setEmail("professor@email.com");
+        professor.setAtivo(true);
+        professor.setPerfis(perfisProfessor);
+        professor.setDataAtivo(new Date());
+        usuarioRepo.save(professor);
+
+
+        aluno.setNome("Usuário Aluno");
+        aluno.setSenha(passwordEncoding().encode("senha1234"));
+        aluno.setEmail("aluno@email.com");
+        aluno.setAtivo(true);
+        aluno.setPerfis(perfisAluno);
+        aluno.setDataAtivo(new Date());
+        usuarioRepo.save(aluno);
     }
     
 }
