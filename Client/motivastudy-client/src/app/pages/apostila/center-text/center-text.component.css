@@ -29,7 +29,7 @@ html {
   position: relative;
   display: flex;
   align-items: center;
-  height: 145.5%;
+  height: 105.5%;
 }
 
 .container .box .title .block {
@@ -78,7 +78,7 @@ html {
   display: flex;
   align-items: center;
   height: 50%;
-  margin-top: -25px;
+  margin-top: -28px;
 }
 
 .container .box .role .block {
@@ -87,7 +87,7 @@ html {
   background: #330867;
   position: absolute;
   animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
-  animation-delay: 1s;
+  animation-delay: 0.8s;
   display: flex;
 }
 
