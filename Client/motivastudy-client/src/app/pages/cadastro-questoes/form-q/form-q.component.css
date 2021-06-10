@@ -1,0 +1,158 @@
+/** design do formulario */
+form {
+  background-color: #fcfcfc;
+  border-radius: 15px;
+  box-shadow: 0px 7px 15px -5px #574fb6;
+}
+
+.form-control {
+  border-radius: 15px;
+  box-shadow: 0px 3px 15px -5px #827ad8;
+}
+.input-group {
+  padding-bottom: 20px;
+}
+
+
+.form-control {
+  border-radius: 15px;
+  box-shadow: 0px 3px 15px -5px #827ad8;
+}
+
+
+.input-group{
+  padding-bottom: 20px;
+}
+
+/** TEXTOS */
+/** TITULO */
+h3{
+  margin-left: 8px;
+}
+
+.text-white {
+  font-size: 23px;
+  background: linear-gradient(to right, #330867 2%, #30CFD0 40%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-color {
+  font-size: 23px;
+  font-family: 'NexaLight';
+  background: linear-gradient(to right, #fcfcfc 1%, #fcfcfc 25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* div left */ 
+.div-left {
+  padding: 55px;
+}
+
+.form-control {
+  border-radius: 15px;
+  box-shadow: 0px 3px 15px -5px #827ad8;
+}
+
+
+.input-group {
+  padding-bottom: 20px;
+}
+.inputQ {
+  margin-bottom: 15px;
+}
+
+
+/* div left */
+.div-right{
+  padding: 55px;
+  border-radius: 15px;
+   background: linear-gradient(to right, #330867, #30CFD0);
+   box-shadow: 0px 7px 15px -5px #574fb6;
+}
+
+.alternativas{
+  margin-bottom: 20px;
+  background: transparent;
+  color: white;
+}
+
+.alternativasForm {
+color: gray;
+}
+
+.alternativaCerta {
+  margin-top: 37px;
+}
+
+
+
+/** botão do gradiente */
+.btn-grad {
+  border-radius: 50px;
+  font-size: 17px;
+  font-family: 'NexaBold';
+  border: 0%;
+  border-style: none;
+  background-color: transparent;
+  margin-top: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color:white;
+  box-shadow: 0 0 5px #eee;
+  display: block;
+
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #30CFD0;
+  text-decoration: none;
+}
+
+
+/* HOVER DOS CAMPOS DE TEXTO */
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #eee;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+  0 0 8px #eee;
+  outline: 0 none;
+}
+
+/* HOVER DO SELECT */
+select:focus {
+    border-color: #eee;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset,
+      0 0 8px #eee;
+    outline: 0 none;
+}
+
+select {
+  background: transparent;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+}

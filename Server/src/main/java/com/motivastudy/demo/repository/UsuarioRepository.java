@@ -7,9 +7,10 @@ import com.motivastudy.demo.models.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     
-    Optional<Usuario> findByNome(String nome);
-    Optional<Usuario> findByEmail(String email);
-    Optional<Usuario> findById(Long id);
+    Optional<Usuario> findUsuarioByNome(String nome);
+    Optional<Usuario> findUsuarioByEmail(String email);
+    Optional<Usuario> findUsuarioById(Long id);
+    Optional<Usuario> findByToken(String token);
 
     List<Usuario> findAll();
 }

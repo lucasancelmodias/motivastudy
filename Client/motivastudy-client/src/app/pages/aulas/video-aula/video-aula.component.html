@@ -1,0 +1,36 @@
+<body>
+  <div class="container">
+    <div class="tab-content">
+      <!-- Home que some quando seleciona o tópico -->
+      <div id="home" class="tab-pane fade in active show">
+        <app-home-aulas *ngIf="!dadosCarregados"> </app-home-aulas>
+      </div>
+      <!-- Template Aulas -->
+      <div id="VM1T1" *ngIf="videos">
+          <!-- titulo video -->
+          <h3>{{videos[contador].snippet.title}}</h3>
+
+          <!-- iFrame das playlist -->
+          <div  class="embed-responsive embed-responsive-16by9">
+
+            <iframe class="embed-responsive-item" [src]="getVideoUrl(videos[contador].contentDetails.videoId)|safe"
+            title="{{videos[contador].snippet.title}}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+          <!-- Botões para percorrer os videos da playlist -->
+          <div class="d-flex justify-content-around">
+            <button (click)="videoAnterior()" class="btn btn-primary btn-grad">Aula Anterior</button>
+            {{contador+1}}/{{tamanhoPlaylist}}
+            <button (click)="proximoVideo()" class="btn btn-primary btn-grad">Próxima Aula</button>
+          </div>
+          <!-- Descrição do video em questão -->
+          <!-- <div class="container">
+            <a href="#demo" class="btn btn-primary btn-grad" data-toggle="collapse">Descrição</a>
+            <div id="demo" class="collapse">
+              {{videos[contador].snippet.description}}
+            </div>
+          </div> -->
+      </div>
+    </div>
+

@@ -1,0 +1,63 @@
+<form ngNativeValidate #questaoForm="ngForm" (ngSubmit)="salvarQuestao(questaoForm)">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-6 div-left">
+      <div class="form-group">
+        <!-- SELECT  MATÉRIA  -->
+        <h3 class="text-white">Matéria</h3>
+        <select class="form-control inputQ" id="selectMateria" name="materia" required (change)="changeDisciplina($event.target)" ngModel>
+          <option value="" selected disabled hidden>Selecione</option>
+          <option *ngFor="let disciplina of disciplinas" value="{{disciplina.id}}" >{{ disciplina.nome }} </option>
+        </select>
+        <!-- SELECT  Tópico  -->
+        <h3 class="text-white">Tópico</h3>
+        <select class="form-control inputQ" id="TopicoMatematica1" name="topicoId" required ngModel>
+          <option value="" selected disabled hidden>Selecione</option>
+          <option *ngFor="let topico of topicos" value="{{topico.id}}">{{ topico.nome }}</option>
+        </select>
+        <!-- CAMPO ENUNCIADO  -->
+        <h3 class="text-white"> Enunciado</h3>
+        <textarea type="text" class="form-control inputQ" id="enunciado" rows="3" placeholder="Enunciado da Questão."
+          name="enunciado" required ngModel></textarea>
+        <!-- CAMPO TEXTO DE APOIO  -->
+        <h3 class="text-white">Texto de apoio</h3>
+        <textarea type="text" class="form-control inputQ" id="textoApoio" rows="3" placeholder="Texto de apoio."
+          name="textoApoio" required ngModel></textarea>
+        <h3 class="text-white">Peso</h3>
+        <select class="form-control" id="peso" name="peso" required ngModel>
+          <option>1 </option>
+          <option>3</option>
+          <option>5</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-6 div-right">
+      <!-- ALTERNATIVAS  -->
+      <div class="form-group ">
+        <h3 class="text-color">Alternativas</h3>
+        <input type="text" class="form-control alternativas" id="valorAlternativaA" placeholder="Alternativa A"
+          name="valorAlternativaA" required ngModel>
+        <input type="text" class="form-control alternativas" id="valorAlternativaB" placeholder="Alternativa B"
+          name="valorAlternativaB" required ngModel>
+        <input type="text" class="form-control alternativas" id="valorAlternativaC" placeholder="Alternativa C"
+          name="valorAlternativaC" required ngModel>
+        <input type="text" class="form-control alternativas" id="valorAlternativaD" placeholder="Alternativa D"
+          name="valorAlternativaD" required ngModel>
+        <input type="text" class="form-control alternativas" id="valorAlternativaE" placeholder="Alternativa E"
+          name="valorAlternativaE" required ngModel>
+        <!-- ALTERNATIVA CERTA  -->
+        <h3 class="text-color alternativaCerta">Alternativa correta</h3>
+        <select class="form-control alternativasForm" id="alternativaCorreta" name="alternativaCorreta" required ngModel>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+          <option>D</option>
+          <option>E</option>
+        </select>
+        <!-- BOTÃO DE CADASTRO  -->
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-grad">Cadastrar Questão</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,165 @@
+.nav-tabs, .nav-item,.nav-link  {
+border: 0;
+margin: 0;
+padding: 0;
+list-style-type: none;
+text-decoration: none;
+display: block;
+width: 100%;
+}
+
+/** cor do menu e posição */
+.wrapper {
+  margin: 0 auto;
+  padding: 4%;
+  background: #fcfcfc;
+  border-radius: 5px;
+  box-shadow: -10px 10px 20px -15px #282269;
+  color:#6d6a8a;
+}
+
+/** Text do campo que fica a matéria */
+.wrapper label {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: text-indent 0.2s;
+  text-indent: 20px;
+font-size: 16px;
+border-radius: 2px;
+top:4px;
+font-family: 'NexaBold';
+}
+
+/** Imício da lista  */
+.wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+/** Tópico  */
+.wrapper li {
+  color: white;
+  list-style-type: none;
+  font-family: 'NexaBold';
+}
+/** Tópico link  */
+.wrapper li a {
+  display: block;
+  width: 100%;
+  padding: 15px 0px;
+  text-decoration: none;
+  color: rgb(10, 10, 10);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+/** Tópico quando clica  */
+.wrapper li a:hover {
+  background: linear-gradient(to right, #330867 30%, #db40a5 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-color: #330867;
+  
+}
+/** Quando seleciona a matéria  */
+.wrapper label:hover {
+  color: #251b91;
+  text-indent: 38px;
+  -webkit-transition: text-indent 0.2s;
+  -moz-transition: text-indent 0.2s;
+  transition: text-indent 0.2s;
+
+}
+
+
+/**Cor da listra que passa */
+.wrapper span {
+  height: 2px;
+  position: absolute;
+  width: 0px;
+  display: block;
+  top: 40px;
+  background: linear-gradient(to right, #330867 20%, #db40a5  90%);
+
+}
+
+/**Cor do conteudo */
+.wrapper .content {
+  height: 0;
+  background: #fcfcfc;
+  height: max-content;
+  position: relative;
+  border-top: 2px solid rgba(0, 0, 0, 0.10);
+  font-size: 14px;
+  font-family: 'Nexa';
+  color:#6d6a8a;
+}
+/**setinha */
+.lil_arrow {
+  width: 5px;
+  height: 5px;
+  -webkit-transition: transform 1ms;
+  transition: transform 1ms;
+  border-top: 2px solid rgba(0, 0, 0, 0.33);
+  border-right: 2px solid rgba(0, 0, 0, 0.33);
+  float: right;
+  position: relative;
+  top: -25px;
+  right: 30px;
+  transform: rotate(45deg);
+}
+
+/**Velocidade da setinha virar */
+.wrapper input[type="checkbox"]:checked+label>.lil_arrow {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: rotate(135deg);
+}
+
+/**Velocidade do drop */
+.wrapper input[type="checkbox"]:checked+label {
+  display: block;
+  background: linear-gradient(to right, #330867 25%, #db40a5 90%) !important;
+  border-radius: 5px;
+  padding-top: 5%;
+  color:white;
+  text-indent: 40px;
+  height: max-content;
+  -webkit-transition:  0.3s;
+  transition:  0.3s;
+  -webkit-transition-timing-function: cubic-bezier(7.68, -1.90, 4.7, 0.20);
+
+}
+
+/**Velocidade do risco rosa */ 
+.wrapper label:hover>span {
+  width: 100%;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: width 0.3s;
+}
+
+/**Tamanho da label de cada matéria */ 
+.wrapper input[type='checkbox']:not(:checked)+label {
+  display: block;
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  transition: height 0.2s;
+  height: 60px;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper input[type="checkbox"] {
+    display: none;
+  }
+  
+.wrapper input[type="checkbox"]:checked+label>.content {
+    display: block;
+  }
+  .wrapper input[type="checkbox"]:checked+label>span {
+    display: none;
+  }
+  

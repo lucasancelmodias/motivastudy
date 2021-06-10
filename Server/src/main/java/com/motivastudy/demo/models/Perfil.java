@@ -1,5 +1,6 @@
 package com.motivastudy.demo.models;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,15 +12,25 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "perfis")
+@Table(name = "perfil")
 @Data
-public class Perfil {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Perfil implements Serializable {
     public static final String ALUNO = "ALUNO";
     public static final String PROFESSOR = "PROFESSOR";
     public static final String ADMIN = "ADMIN";
+
+    public Perfil(String nome){
+        this.nome = nome;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,5 +39,6 @@ public class Perfil {
     private String nome;
 
     @ManyToMany(mappedBy = "perfis")
+    @JsonBackReference
     private List<Usuario> usuarios;
 }

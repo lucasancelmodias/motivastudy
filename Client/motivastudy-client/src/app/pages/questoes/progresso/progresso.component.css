@@ -1,0 +1,26 @@
+h4 {
+  font-family: 'Nexabold';
+  font-size: 165%;
+  color: #db40a5;
+  padding-top: 4%;
+  text-align: center;
+  padding-bottom: 4%;
+}
+
+h5 {
+  font-family: 'Nexabold';
+  font-size: 130%;
+  color: #330867;
+  text-align: center;
+  padding-bottom: 3%;
+
+}
+
+b {
+  color: #890ca8;
+}
+
+body {
+  background: #fcfcfc;
+  padding: 7%;
+}

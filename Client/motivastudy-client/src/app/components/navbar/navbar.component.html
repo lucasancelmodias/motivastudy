@@ -1,0 +1,56 @@
+<!-- Chamando a navbar  -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- LOGO  -->
+  <a class="navbar-brand" src="/ "><img src="/assets/img/conteudo/logo.png" width="50" height="33"
+      class="d-inline-block align-top" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- FIM LOGO  -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <!-- Primeiro item da navbar  -->
+      <li class="nav-item">
+        <a class="nav-link " href="/videos">Aulas</a>
+      </li>
+      <!-- Segundo item da navbar  -->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/questoes">Questões</a>
+      </li>
+      <!-- Terceiro item da navbar  -->
+      <li class="nav-item">
+        <a class="nav-link" href="/apostila">Apostilas</a>
+      </li>
+      <!-- Quarto item da navbar  -->
+      <li class="nav-item">
+        <a class="nav-link" href="/enem">Sobre o Enem</a>
+      </li>
+      <!-- Quinto item da navbar  -->
+      <li class="nav-item">
+        <a class="nav-link" href="/sisu">Sisu</a>
+      </li>
+      <!-- Sexto item da navbar  -->
+      <li class="nav-item" *ngIf="perfil != 'ALUNO'">
+        <a class="nav-link" href="/cadastroQuestoes">Cadastrar Questão</a>
+      </li>
+    </ul>
+    <!-- Sexto item da navbar  - parte direita -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">{{usuario.nome}}</a>
+        <!-- Dropdown item da navbar  - parte direita -->
+        <!-- Perfil -->
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item d-flex justify-content-center" routerLink="/perfil"><img class="IconPosition"
+              alt=" IconPerfil" src="./assets/img/Icons/PerfilBlue.png" width="20" height="20">&nbsp;Perfil</a>
+          <!-- Sair -->
+          <div class="dropdown-divider"></div>
+          <a (click)="logout()" class="dropdown-item d-flex justify-content-center" href="#"><img class="IconPosition" alt="IconPerfil"
+              src="./assets/img/Icons/ExitBlue.png" width="20" height="20">&nbsp;Sair</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

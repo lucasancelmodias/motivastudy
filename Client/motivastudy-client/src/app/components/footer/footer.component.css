@@ -1,0 +1,14 @@
+.footer {
+  margin-top: 100px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #330867ec;
+  text-align: center;
+  color: #fcfcfc;
+}
+
+.footer-copyright {
+  text-align: center;
+}

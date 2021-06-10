@@ -1,0 +1,16 @@
+<body ID="grad">
+  <!-- Row central -->
+  <app-navbar></app-navbar>
+  <h1> <span id="text" class="border-gradient border-gradient-purple"> Aulas</span> </h1>
+  <div class="row">
+    <!-- Nav lateral -->
+    <div class="col-sm-12 col-md-12 col-lg-2">
+      <app-sidebar (topico)="topicoChange($event)"></app-sidebar>
+    </div>
+    <!-- Questão do topico escolhido-->
+    <div class="col-sm-12 col-md-12 col-lg-9">
+      <app-video-aula [topico]="topicoAtual"></app-video-aula>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</body>

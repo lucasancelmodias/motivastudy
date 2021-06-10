@@ -1,0 +1,52 @@
+ /* Aplicando a img de fundo e a fonte */
+ #grad {
+   background-size:cover;
+   background-image: url('src\assets\img\img.jpg');
+ }
+
+ /** Colocando a font e posicionando */
+ body {
+   font-family: 'NexaLight';
+   width: 100%;
+   height: 100%;
+
+   position:relative;
+ }
+
+
+ /* Aplicando definindo a fonte do titulo */
+h1{
+  text-align: center;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  color: #330867;
+  font-family: 'MontserratBold';
+  font-size: 40px;
+}
+
+/** texto em gradiente*/
+#text {
+  background: linear-gradient(to right, #330867 20%, #30CFD0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'MontserratBold';
+  font-size: 40px;
+}
+
+/** Centralizando o col*/
+.row {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  padding: 5px;
+}
+
+.border-gradient-purple {
+  border-image-source: linear-gradient(to right, #30CFD0, #330867);
+}
+
