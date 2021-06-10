@@ -41,6 +41,7 @@ font-family: 'NexaBold';
 .wrapper li {
   color: white;
   list-style-type: none;
+  font-family: 'NexaBold';
 }
 /** Tópico link  */
 .wrapper li a {

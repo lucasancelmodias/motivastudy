@@ -42,7 +42,7 @@ export class FormAlterarDadosComponent implements OnInit, OnDestroy {
         localStorage.setItem('usuario', JSON.stringify(response))
         this.authServ.usuarioAtualSubject.next(response)
         //alert("Dados Alterados com Sucesso!! Entre novamente para notar as alterações.");
-        //window.location.reload();
+        window.location.reload();
       }
     )
   }

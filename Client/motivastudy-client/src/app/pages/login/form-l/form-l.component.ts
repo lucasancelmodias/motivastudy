@@ -23,7 +23,7 @@ export class FormLComponent implements OnInit {
       (response:any) => {
       console.log('response', response)
       //Direciona page login
-      this.route.navigate(['questoes']);
+      this.route.navigate(['videos']);
     },(error: HttpErrorResponse) => {
       console.log('error Message',error.error.mensagem)
       alert(error.error.mensagem);
